@@ -72,6 +72,12 @@
     <Compile Include="ABM Rol\FormAltaRol.Designer.cs">
       <DependentUpon>FormAltaRol.cs</DependentUpon>
     </Compile>
+    <Compile Include="ABM Rol\UserControlListadoRoles.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ABM Rol\UserControlListadoRoles.Designer.cs">
+      <DependentUpon>UserControlListadoRoles.cs</DependentUpon>
+    </Compile>
     <Compile Include="Consulta Saldos\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +118,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="ABM Rol\FormAltaRol.resx">
       <DependentUpon>FormAltaRol.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABM Rol\UserControlListadoRoles.resx">
+      <DependentUpon>UserControlListadoRoles.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">

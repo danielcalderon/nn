@@ -11,10 +11,10 @@ namespace PagoElectronico
             InitializeComponent();
         }
 
-        private static void crearNuevoRolToolStripMenuItem_Click(object sender, EventArgs e)
+        private void rolesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormAltaRol formAltaRol = new FormAltaRol();
-            formAltaRol.Show();
+            UserControlListadoRoles userControlListadoRoles = new UserControlListadoRoles();
+            panelPrincipal.Controls.Add(userControlListadoRoles);
         }
     }
 }
