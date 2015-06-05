@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using PagoElectronico.ABM_Rol;
+using PagoElectronico.Login;
 
 namespace PagoElectronico
 {
@@ -14,7 +15,14 @@ namespace PagoElectronico
         private void rolesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             UserControlListadoRoles userControlListadoRoles = new UserControlListadoRoles();
+            panelPrincipal.Controls.Clear();
             panelPrincipal.Controls.Add(userControlListadoRoles);
+        }
+
+        private void FormMain_Shown(object sender, EventArgs e)
+        {
+            FormLogin formLogin = new FormLogin();
+            formLogin.ShowDialog();
         }
     }
 }
