@@ -2,15 +2,20 @@
 
 namespace PagoElectronico.ABM_Rol
 {
-    public partial class FormAltaRol : Form
+    public partial class FormModificacionRol : Form
     {
-        public FormAltaRol()
+        private readonly int _idRol;
+
+        public FormModificacionRol(int idRol)
         {
+            _idRol = idRol;
             InitializeComponent();
         }
 
         private void FormAltaRol_Load(object sender, System.EventArgs e)
         {
+            textBoxId.Text = _idRol.ToString();
+
             listViewFuncionalidades.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
             listViewFuncionalidades.Columns[0].Width -= 17;
             listViewFuncionalidades.Items.Add("Funcionalidad 1");

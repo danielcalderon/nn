@@ -1,6 +1,6 @@
 ﻿namespace PagoElectronico.ABM_Rol
 {
-    partial class FormAltaRol
+    partial class FormModificacionRol
     {
         /// <summary>
         /// Required designer variable.
@@ -31,19 +31,21 @@
             this.textBoxNombreRol = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBoxRol = new System.Windows.Forms.GroupBox();
+            this.textBoxId = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.checkBoxActivo = new System.Windows.Forms.CheckBox();
             this.listViewFuncionalidades = new System.Windows.Forms.ListView();
             this.Funcionalidad = new System.Windows.Forms.ColumnHeader();
             this.label2 = new System.Windows.Forms.Label();
             this.buttonLimpiar = new System.Windows.Forms.Button();
-            this.buttonGuardar = new System.Windows.Forms.Button();
+            this.buttonModificar = new System.Windows.Forms.Button();
             this.buttonCancelar = new System.Windows.Forms.Button();
             this.groupBoxRol.SuspendLayout();
             this.SuspendLayout();
             // 
             // textBoxNombreRol
             // 
-            this.textBoxNombreRol.Location = new System.Drawing.Point(96, 30);
+            this.textBoxNombreRol.Location = new System.Drawing.Point(96, 53);
             this.textBoxNombreRol.Name = "textBoxNombreRol";
             this.textBoxNombreRol.Size = new System.Drawing.Size(169, 20);
             this.textBoxNombreRol.TabIndex = 0;
@@ -51,7 +53,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 33);
+            this.label1.Location = new System.Drawing.Point(6, 56);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(73, 13);
             this.label1.TabIndex = 1;
@@ -59,6 +61,8 @@
             // 
             // groupBoxRol
             // 
+            this.groupBoxRol.Controls.Add(this.textBoxId);
+            this.groupBoxRol.Controls.Add(this.label3);
             this.groupBoxRol.Controls.Add(this.checkBoxActivo);
             this.groupBoxRol.Controls.Add(this.listViewFuncionalidades);
             this.groupBoxRol.Controls.Add(this.label2);
@@ -71,12 +75,29 @@
             this.groupBoxRol.TabStop = false;
             this.groupBoxRol.Text = "Datos del rol";
             // 
+            // textBoxId
+            // 
+            this.textBoxId.Location = new System.Drawing.Point(96, 27);
+            this.textBoxId.Name = "textBoxId";
+            this.textBoxId.ReadOnly = true;
+            this.textBoxId.Size = new System.Drawing.Size(169, 20);
+            this.textBoxId.TabIndex = 8;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 30);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(45, 13);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Id de rol";
+            // 
             // checkBoxActivo
             // 
             this.checkBoxActivo.AutoSize = true;
             this.checkBoxActivo.Checked = true;
             this.checkBoxActivo.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxActivo.Location = new System.Drawing.Point(9, 192);
+            this.checkBoxActivo.Location = new System.Drawing.Point(9, 211);
             this.checkBoxActivo.Name = "checkBoxActivo";
             this.checkBoxActivo.Size = new System.Drawing.Size(74, 17);
             this.checkBoxActivo.TabIndex = 6;
@@ -89,7 +110,7 @@
             this.listViewFuncionalidades.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.Funcionalidad});
             this.listViewFuncionalidades.FullRowSelect = true;
-            this.listViewFuncionalidades.Location = new System.Drawing.Point(97, 57);
+            this.listViewFuncionalidades.Location = new System.Drawing.Point(96, 79);
             this.listViewFuncionalidades.Name = "listViewFuncionalidades";
             this.listViewFuncionalidades.Size = new System.Drawing.Size(257, 129);
             this.listViewFuncionalidades.TabIndex = 4;
@@ -103,7 +124,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 56);
+            this.label2.Location = new System.Drawing.Point(6, 79);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(84, 13);
             this.label2.TabIndex = 3;
@@ -119,15 +140,15 @@
             this.buttonLimpiar.UseVisualStyleBackColor = true;
             this.buttonLimpiar.Click += new System.EventHandler(this.buttonLimpiar_Click);
             // 
-            // buttonGuardar
+            // buttonModificar
             // 
-            this.buttonGuardar.Location = new System.Drawing.Point(297, 277);
-            this.buttonGuardar.Name = "buttonGuardar";
-            this.buttonGuardar.Size = new System.Drawing.Size(75, 23);
-            this.buttonGuardar.TabIndex = 4;
-            this.buttonGuardar.Text = "Guardar";
-            this.buttonGuardar.UseVisualStyleBackColor = true;
-            this.buttonGuardar.Click += new System.EventHandler(this.buttonGuardar_Click);
+            this.buttonModificar.Location = new System.Drawing.Point(297, 277);
+            this.buttonModificar.Name = "buttonModificar";
+            this.buttonModificar.Size = new System.Drawing.Size(75, 23);
+            this.buttonModificar.TabIndex = 4;
+            this.buttonModificar.Text = "Modificar";
+            this.buttonModificar.UseVisualStyleBackColor = true;
+            this.buttonModificar.Click += new System.EventHandler(this.buttonGuardar_Click);
             // 
             // buttonCancelar
             // 
@@ -139,18 +160,18 @@
             this.buttonCancelar.UseVisualStyleBackColor = true;
             this.buttonCancelar.Click += new System.EventHandler(this.buttonCancelar_Click);
             // 
-            // FormAltaRol
+            // FormModificacionRol
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(384, 312);
             this.Controls.Add(this.buttonCancelar);
-            this.Controls.Add(this.buttonGuardar);
+            this.Controls.Add(this.buttonModificar);
             this.Controls.Add(this.buttonLimpiar);
             this.Controls.Add(this.groupBoxRol);
-            this.Name = "FormAltaRol";
+            this.Name = "FormModificacionRol";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Nuevo rol";
+            this.Text = "Modificación de rol";
             this.Load += new System.EventHandler(this.FormAltaRol_Load);
             this.groupBoxRol.ResumeLayout(false);
             this.groupBoxRol.PerformLayout();
@@ -167,8 +188,10 @@
         private System.Windows.Forms.ListView listViewFuncionalidades;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button buttonLimpiar;
-        private System.Windows.Forms.Button buttonGuardar;
+        private System.Windows.Forms.Button buttonModificar;
         private System.Windows.Forms.ColumnHeader Funcionalidad;
         private System.Windows.Forms.Button buttonCancelar;
+        private System.Windows.Forms.TextBox textBoxId;
+        private System.Windows.Forms.Label label3;
     }
 }
