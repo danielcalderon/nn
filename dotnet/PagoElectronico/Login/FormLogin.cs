@@ -20,5 +20,10 @@ namespace PagoElectronico.Login
         {
             Close();
         }
+
+        private void buttonCancelar_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

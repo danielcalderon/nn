@@ -48,23 +48,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ABM Cliente\Form1.cs">
-      <SubType>Form</SubType>
+    <Compile Include="ABM Cliente\UserControlClientes.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ABM Cliente\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="ABM Cliente\UserControlClientes.Designer.cs">
+      <DependentUpon>UserControlClientes.cs</DependentUpon>
     </Compile>
-    <Compile Include="ABM Cuenta\Form1.cs">
-      <SubType>Form</SubType>
+    <Compile Include="ABM Cuenta\UserControlCuentas.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ABM Cuenta\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="ABM Cuenta\UserControlCuentas.Designer.cs">
+      <DependentUpon>UserControlCuentas.cs</DependentUpon>
     </Compile>
-    <Compile Include="ABM de Usuario\Form1.cs">
-      <SubType>Form</SubType>
+    <Compile Include="ABM de Usuario\UserControlListadoUsuarios.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ABM de Usuario\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="ABM de Usuario\UserControlListadoUsuarios.Designer.cs">
+      <DependentUpon>UserControlListadoUsuarios.cs</DependentUpon>
     </Compile>
     <Compile Include="ABM Rol\FormAltaRol.cs">
       <SubType>Form</SubType>
@@ -78,23 +78,23 @@
     <Compile Include="ABM Rol\UserControlListadoRoles.Designer.cs">
       <DependentUpon>UserControlListadoRoles.cs</DependentUpon>
     </Compile>
-    <Compile Include="Consulta Saldos\Form1.cs">
-      <SubType>Form</SubType>
+    <Compile Include="Consulta Saldos\UserControlSaldos.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Consulta Saldos\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Consulta Saldos\UserControlSaldos.Designer.cs">
+      <DependentUpon>UserControlSaldos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Depositos\Form1.cs">
-      <SubType>Form</SubType>
+    <Compile Include="Depositos\UserControlDepositos.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Depositos\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Depositos\UserControlDepositos.Designer.cs">
+      <DependentUpon>UserControlDepositos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Facturacion\Form1.cs">
-      <SubType>Form</SubType>
+    <Compile Include="Facturacion\UserControlFacturacion.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Facturacion\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Facturacion\UserControlFacturacion.Designer.cs">
+      <DependentUpon>UserControlFacturacion.cs</DependentUpon>
     </Compile>
     <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
@@ -116,12 +116,36 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ABM Cliente\UserControlClientes.resx">
+      <DependentUpon>UserControlClientes.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABM Cuenta\UserControlCuentas.resx">
+      <DependentUpon>UserControlCuentas.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABM de Usuario\UserControlListadoUsuarios.resx">
+      <DependentUpon>UserControlListadoUsuarios.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="ABM Rol\FormAltaRol.resx">
       <DependentUpon>FormAltaRol.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="ABM Rol\UserControlListadoRoles.resx">
       <DependentUpon>UserControlListadoRoles.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consulta Saldos\UserControlSaldos.resx">
+      <DependentUpon>UserControlSaldos.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Depositos\UserControlDepositos.resx">
+      <DependentUpon>UserControlDepositos.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Facturacion\UserControlFacturacion.resx">
+      <DependentUpon>UserControlFacturacion.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
@@ -137,6 +161,14 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Retiros\UserControlRetiros.resx">
+      <DependentUpon>UserControlRetiros.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transferencias\UserControlTransferencias.resx">
+      <DependentUpon>UserControlTransferencias.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
@@ -150,17 +182,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Retiros\Form1.cs">
-      <SubType>Form</SubType>
+    <Compile Include="Retiros\UserControlRetiros.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Retiros\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Retiros\UserControlRetiros.Designer.cs">
+      <DependentUpon>UserControlRetiros.cs</DependentUpon>
     </Compile>
-    <Compile Include="Transferencias\Form1.cs">
-      <SubType>Form</SubType>
+    <Compile Include="Transferencias\UserControlTransferencias.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Transferencias\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Transferencias\UserControlTransferencias.Designer.cs">
+      <DependentUpon>UserControlTransferencias.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
