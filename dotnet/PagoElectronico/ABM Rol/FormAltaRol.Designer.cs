@@ -148,6 +148,7 @@
             this.Controls.Add(this.buttonGuardar);
             this.Controls.Add(this.buttonLimpiar);
             this.Controls.Add(this.groupBoxRol);
+            this.MaximizeBox = false;
             this.Name = "FormAltaRol";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nuevo rol";

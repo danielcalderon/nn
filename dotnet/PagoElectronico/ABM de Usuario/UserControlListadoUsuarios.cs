@@ -1,10 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace PagoElectronico.ABM_de_Usuario
@@ -14,6 +8,12 @@ namespace PagoElectronico.ABM_de_Usuario
         public UserControlListadoUsuarios()
         {
             InitializeComponent();
+        }
+
+        private void buttonCrear_Click(object sender, EventArgs e)
+        {
+            FormAltaUsuario formAltaUsuario = new FormAltaUsuario();
+            formAltaUsuario.ShowDialog();
         }
     }
 }
