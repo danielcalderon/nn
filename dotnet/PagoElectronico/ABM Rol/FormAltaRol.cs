@@ -39,7 +39,7 @@ namespace PagoElectronico.ABM_Rol
 
         private void buttonGuardar_Click(object sender, System.EventArgs e)
         {
-            if (textBoxNombreRol.Text.Length == 0)
+            if (textBoxNombreRol.Text.Trim().Length == 0)
             {
                 MessageBox.Show("El campo Nombre no puede estar vacío", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;

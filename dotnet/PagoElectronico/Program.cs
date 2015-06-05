@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Windows.Forms;
-using PagoElectronico.Login;
 
 namespace PagoElectronico
 {
     static class Program
     {
-        /// <summary>
-        /// The main entry point for the application.
-        /// </summary>
+        public static string Usuario { get; set; }
+
+        public static string Rol { get; set; }
+
         [STAThread]
         static void Main()
         {

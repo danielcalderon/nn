@@ -28,96 +28,37 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.buttonIngresar = new System.Windows.Forms.Button();
-            this.textBoxPassword = new System.Windows.Forms.TextBox();
-            this.textBoxUsuario = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.buttonCancelar = new System.Windows.Forms.Button();
+            this.panelLogin = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
-            // buttonIngresar
+            // panelLogin
             // 
-            this.buttonIngresar.Location = new System.Drawing.Point(200, 128);
-            this.buttonIngresar.Name = "buttonIngresar";
-            this.buttonIngresar.Size = new System.Drawing.Size(75, 23);
-            this.buttonIngresar.TabIndex = 9;
-            this.buttonIngresar.Text = "Ingresar";
-            this.buttonIngresar.UseVisualStyleBackColor = true;
-            this.buttonIngresar.Click += new System.EventHandler(this.buttonIngresar_Click);
-            // 
-            // textBoxPassword
-            // 
-            this.textBoxPassword.Location = new System.Drawing.Point(108, 89);
-            this.textBoxPassword.Name = "textBoxPassword";
-            this.textBoxPassword.PasswordChar = '*';
-            this.textBoxPassword.Size = new System.Drawing.Size(167, 20);
-            this.textBoxPassword.TabIndex = 8;
-            // 
-            // textBoxUsuario
-            // 
-            this.textBoxUsuario.Location = new System.Drawing.Point(108, 63);
-            this.textBoxUsuario.Name = "textBoxUsuario";
-            this.textBoxUsuario.Size = new System.Drawing.Size(167, 20);
-            this.textBoxUsuario.TabIndex = 7;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(28, 92);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(61, 13);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Contraseña";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(28, 66);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(43, 13);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Usuario";
-            // 
-            // buttonCancelar
-            // 
-            this.buttonCancelar.Location = new System.Drawing.Point(119, 128);
-            this.buttonCancelar.Name = "buttonCancelar";
-            this.buttonCancelar.Size = new System.Drawing.Size(75, 23);
-            this.buttonCancelar.TabIndex = 10;
-            this.buttonCancelar.Text = "Cancelar";
-            this.buttonCancelar.UseVisualStyleBackColor = true;
-            this.buttonCancelar.Click += new System.EventHandler(this.buttonCancelar_Click);
+            this.panelLogin.Location = new System.Drawing.Point(12, 12);
+            this.panelLogin.Name = "panelLogin";
+            this.panelLogin.Size = new System.Drawing.Size(294, 168);
+            this.panelLogin.TabIndex = 0;
             // 
             // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(303, 192);
+            this.ClientSize = new System.Drawing.Size(318, 192);
             this.ControlBox = false;
-            this.Controls.Add(this.buttonCancelar);
-            this.Controls.Add(this.buttonIngresar);
-            this.Controls.Add(this.textBoxPassword);
-            this.Controls.Add(this.textBoxUsuario);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.panelLogin);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ingresar";
+            this.Load += new System.EventHandler(this.FormLogin_Load);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button buttonIngresar;
-        private System.Windows.Forms.TextBox textBoxPassword;
-        private System.Windows.Forms.TextBox textBoxUsuario;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button buttonCancelar;
+        private System.Windows.Forms.Panel panelLogin;
+
     }
 }

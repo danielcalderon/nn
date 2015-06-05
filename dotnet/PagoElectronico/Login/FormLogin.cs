@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
 namespace PagoElectronico.Login
 {
@@ -16,14 +9,40 @@ namespace PagoElectronico.Login
             InitializeComponent();
         }
 
-        private void buttonIngresar_Click(object sender, EventArgs e)
+        private void FormLogin_Load(object sender, System.EventArgs e)
         {
-            Close();
+            CargarLogin();
         }
 
-        private void buttonCancelar_Click(object sender, EventArgs e)
+        public void CargarLogin()
         {
-            Application.Exit();
+            UserControlLogin userControlLogin = new UserControlLogin();
+            panelLogin.Controls.Clear();
+            panelLogin.Controls.Add(userControlLogin);
+        }
+
+        public void CargarNuevoUsuario()
+        {
+            UserControlNuevoUsuario userControlNuevoUsuario = new UserControlNuevoUsuario();
+            panelLogin.Controls.Clear();
+            panelLogin.Controls.Add(userControlNuevoUsuario);
+        }
+
+        public void Login(string usuario, string password)
+        {
+            /*if (usuario.Length == 0)
+            {
+                MessageBox.Show("El campo Usuario no puede estar vacío", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (password.Length == 0)
+            {
+                MessageBox.Show("El campo Contraseña no puede estar vacío", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }*/
+            Program.Usuario = "MAGOYA";
+            Program.Rol = "BANQUERO";
+            Close();
         }
     }
 }

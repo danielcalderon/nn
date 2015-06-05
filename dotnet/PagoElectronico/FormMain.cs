@@ -24,6 +24,10 @@ namespace PagoElectronico
         {
             FormLogin formLogin = new FormLogin();
             formLogin.ShowDialog();
+            labelUsuario.Visible = true;
+            labelUsuario.Text += Program.Usuario;
+            labelRol.Visible = true;
+            labelRol.Text += Program.Rol;
         }
 
         private void rolesToolStripMenuItem_Click(object sender, EventArgs e)
