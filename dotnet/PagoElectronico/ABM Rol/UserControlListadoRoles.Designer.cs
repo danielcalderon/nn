@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.buttonAlta = new System.Windows.Forms.Button();
+            this.buttonNuevo = new System.Windows.Forms.Button();
             this.dataGridViewRoles = new System.Windows.Forms.DataGridView();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -38,15 +38,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRoles)).BeginInit();
             this.SuspendLayout();
             // 
-            // buttonAlta
+            // buttonNuevo
             // 
-            this.buttonAlta.Location = new System.Drawing.Point(522, 3);
-            this.buttonAlta.Name = "buttonAlta";
-            this.buttonAlta.Size = new System.Drawing.Size(75, 23);
-            this.buttonAlta.TabIndex = 1;
-            this.buttonAlta.Text = "Nuevo rol";
-            this.buttonAlta.UseVisualStyleBackColor = true;
-            this.buttonAlta.Click += new System.EventHandler(this.buttonAlta_Click);
+            this.buttonNuevo.Location = new System.Drawing.Point(522, 3);
+            this.buttonNuevo.Name = "buttonNuevo";
+            this.buttonNuevo.Size = new System.Drawing.Size(75, 23);
+            this.buttonNuevo.TabIndex = 1;
+            this.buttonNuevo.Text = "Nuevo";
+            this.buttonNuevo.UseVisualStyleBackColor = true;
+            this.buttonNuevo.Click += new System.EventHandler(this.buttonAlta_Click);
             // 
             // dataGridViewRoles
             // 
@@ -114,7 +114,7 @@
             this.Controls.Add(this.buttonEliminar);
             this.Controls.Add(this.buttonModificar);
             this.Controls.Add(this.dataGridViewRoles);
-            this.Controls.Add(this.buttonAlta);
+            this.Controls.Add(this.buttonNuevo);
             this.Name = "UserControlListadoRoles";
             this.Size = new System.Drawing.Size(600, 400);
             this.Load += new System.EventHandler(this.UserControlListadoRoles_Load);
@@ -125,7 +125,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button buttonAlta;
+        private System.Windows.Forms.Button buttonNuevo;
         private System.Windows.Forms.DataGridView dataGridViewRoles;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;

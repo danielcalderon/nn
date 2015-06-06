@@ -14,21 +14,28 @@ namespace PagoElectronico.Login
             CargarLogin();
         }
 
-        public void CargarLogin()
+        internal void CargarLogin()
         {
             UserControlLogin userControlLogin = new UserControlLogin();
             panelLogin.Controls.Clear();
             panelLogin.Controls.Add(userControlLogin);
         }
 
-        public void CargarNuevoUsuario()
+        internal void CargarNuevoUsuario()
         {
             UserControlNuevoUsuario userControlNuevoUsuario = new UserControlNuevoUsuario();
             panelLogin.Controls.Clear();
             panelLogin.Controls.Add(userControlNuevoUsuario);
         }
 
-        public void Login(string usuario, string password)
+        internal void CargarSeleccionarRol()
+        {
+            UserControlSeleccionarRol userControlSeleccionarRol = new UserControlSeleccionarRol();
+            panelLogin.Controls.Clear();
+            panelLogin.Controls.Add(userControlSeleccionarRol);
+        }
+
+        internal void Login(string usuario, string password)
         {
             /*if (usuario.Length == 0)
             {
@@ -42,6 +49,20 @@ namespace PagoElectronico.Login
             }*/
             Program.Usuario = "MAGOYA";
             Program.Rol = "BANQUERO";
+            // si el usuario tiene muchos roles
+            if (usuario.Length > 0)
+            {
+                CargarSeleccionarRol();
+            }
+            else
+            {
+                Close();
+            }
+        }
+
+        internal void SeleccionarRol(int rol)
+        {
+            Program.Rol = "BANQUERA";
             Close();
         }
     }

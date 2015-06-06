@@ -69,6 +69,7 @@
             // 
             this.textBoxUsuario.Location = new System.Drawing.Point(109, 25);
             this.textBoxUsuario.Name = "textBoxUsuario";
+            this.textBoxUsuario.PasswordChar = '•';
             this.textBoxUsuario.Size = new System.Drawing.Size(167, 20);
             this.textBoxUsuario.TabIndex = 3;
             // 
@@ -76,7 +77,7 @@
             // 
             this.textBoxPassword.Location = new System.Drawing.Point(109, 51);
             this.textBoxPassword.Name = "textBoxPassword";
-            this.textBoxPassword.PasswordChar = '♫';
+            this.textBoxPassword.PasswordChar = '•';
             this.textBoxPassword.Size = new System.Drawing.Size(167, 20);
             this.textBoxPassword.TabIndex = 4;
             // 
@@ -84,7 +85,7 @@
             // 
             this.textBoxRepetirPassword.Location = new System.Drawing.Point(109, 77);
             this.textBoxRepetirPassword.Name = "textBoxRepetirPassword";
-            this.textBoxRepetirPassword.PasswordChar = '♪';
+            this.textBoxRepetirPassword.PasswordChar = '•';
             this.textBoxRepetirPassword.Size = new System.Drawing.Size(167, 20);
             this.textBoxRepetirPassword.TabIndex = 5;
             // 

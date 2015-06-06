@@ -97,5 +97,11 @@ namespace PagoElectronico
         {
             Application.Exit();
         }
+
+        private void cambiarContraseñaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormCambiarPassword formCambiarPassword = new FormCambiarPassword();
+            formCambiarPassword.ShowDialog();
+        }
     }
 }

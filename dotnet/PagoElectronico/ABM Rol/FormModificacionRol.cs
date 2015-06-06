@@ -4,17 +4,17 @@ namespace PagoElectronico.ABM_Rol
 {
     public partial class FormModificacionRol : Form
     {
-        private readonly int _idRol;
+        private readonly int _rol;
 
-        public FormModificacionRol(int idRol)
+        public FormModificacionRol(int rol)
         {
-            _idRol = idRol;
+            _rol = rol;
             InitializeComponent();
         }
 
         private void FormAltaRol_Load(object sender, System.EventArgs e)
         {
-            textBoxId.Text = _idRol.ToString();
+            textBoxId.Text = _rol.ToString();
 
             listViewFuncionalidades.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
             listViewFuncionalidades.Columns[0].Width -= 17;

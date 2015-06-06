@@ -72,7 +72,7 @@
             // 
             this.textBoxPassword.Location = new System.Drawing.Point(109, 59);
             this.textBoxPassword.Name = "textBoxPassword";
-            this.textBoxPassword.PasswordChar = '*';
+            this.textBoxPassword.PasswordChar = '•';
             this.textBoxPassword.Size = new System.Drawing.Size(167, 20);
             this.textBoxPassword.TabIndex = 15;
             this.textBoxPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.UserControlLogin_KeyPress);

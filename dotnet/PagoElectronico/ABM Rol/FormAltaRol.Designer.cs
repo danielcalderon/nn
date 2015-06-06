@@ -53,9 +53,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(6, 33);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(73, 13);
+            this.label1.Size = new System.Drawing.Size(44, 13);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Nombre de rol";
+            this.label1.Text = "Nombre";
             // 
             // groupBoxRol
             // 
@@ -78,9 +78,9 @@
             this.checkBoxActivo.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBoxActivo.Location = new System.Drawing.Point(9, 192);
             this.checkBoxActivo.Name = "checkBoxActivo";
-            this.checkBoxActivo.Size = new System.Drawing.Size(74, 17);
+            this.checkBoxActivo.Size = new System.Drawing.Size(56, 17);
             this.checkBoxActivo.TabIndex = 6;
-            this.checkBoxActivo.Text = "Rol activo";
+            this.checkBoxActivo.Text = "Activo";
             this.checkBoxActivo.UseVisualStyleBackColor = true;
             // 
             // listViewFuncionalidades
@@ -89,9 +89,9 @@
             this.listViewFuncionalidades.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.Funcionalidad});
             this.listViewFuncionalidades.FullRowSelect = true;
-            this.listViewFuncionalidades.Location = new System.Drawing.Point(97, 57);
+            this.listViewFuncionalidades.Location = new System.Drawing.Point(96, 56);
             this.listViewFuncionalidades.Name = "listViewFuncionalidades";
-            this.listViewFuncionalidades.Size = new System.Drawing.Size(257, 129);
+            this.listViewFuncionalidades.Size = new System.Drawing.Size(258, 129);
             this.listViewFuncionalidades.TabIndex = 4;
             this.listViewFuncionalidades.UseCompatibleStateImageBehavior = false;
             this.listViewFuncionalidades.View = System.Windows.Forms.View.Details;
@@ -148,6 +148,7 @@
             this.Controls.Add(this.buttonGuardar);
             this.Controls.Add(this.buttonLimpiar);
             this.Controls.Add(this.groupBoxRol);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.Name = "FormAltaRol";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
