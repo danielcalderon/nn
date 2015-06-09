@@ -58,5 +58,17 @@ namespace PagoElectronico.ABM_de_Usuario
         {
             Close();
         }
+
+        private void buttonLimpiar_Click(object sender, EventArgs e)
+        {
+            textBoxNombre.Clear();
+            textBoxPassword.Clear();
+            foreach (ListViewItem rol in listViewRoles.Items)
+            {
+                rol.Checked = false;
+            }
+            textBoxPregunta.Clear();
+            textBoxRespuesta.Clear();
+        }
     }
 }

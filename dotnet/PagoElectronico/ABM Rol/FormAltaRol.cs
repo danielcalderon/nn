@@ -29,7 +29,7 @@ namespace PagoElectronico.ABM_Rol
 
         private void buttonLimpiar_Click(object sender, System.EventArgs e)
         {
-            textBoxNombreRol.Clear();
+            textBoxNombre.Clear();
             foreach (ListViewItem funcionalidad in listViewFuncionalidades.Items)
             {
                 funcionalidad.Checked = false;
@@ -39,7 +39,7 @@ namespace PagoElectronico.ABM_Rol
 
         private void buttonGuardar_Click(object sender, System.EventArgs e)
         {
-            if (textBoxNombreRol.Text.Trim().Length == 0)
+            if (textBoxNombre.Text.Trim().Length == 0)
             {
                 MessageBox.Show("El campo Nombre no puede estar vacío", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;

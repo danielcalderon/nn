@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.buttonCrear = new System.Windows.Forms.Button();
+            this.buttonNuevo = new System.Windows.Forms.Button();
             this.buttonEliminar = new System.Windows.Forms.Button();
             this.buttonModificar = new System.Windows.Forms.Button();
             this.dataGridViewUsuarios = new System.Windows.Forms.DataGridView();
@@ -38,15 +38,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUsuarios)).BeginInit();
             this.SuspendLayout();
             // 
-            // buttonCrear
+            // buttonNuevo
             // 
-            this.buttonCrear.Location = new System.Drawing.Point(522, 3);
-            this.buttonCrear.Name = "buttonCrear";
-            this.buttonCrear.Size = new System.Drawing.Size(75, 23);
-            this.buttonCrear.TabIndex = 0;
-            this.buttonCrear.Text = "Nuevo";
-            this.buttonCrear.UseVisualStyleBackColor = true;
-            this.buttonCrear.Click += new System.EventHandler(this.buttonCrear_Click);
+            this.buttonNuevo.Location = new System.Drawing.Point(522, 3);
+            this.buttonNuevo.Name = "buttonNuevo";
+            this.buttonNuevo.Size = new System.Drawing.Size(75, 23);
+            this.buttonNuevo.TabIndex = 0;
+            this.buttonNuevo.Text = "Nuevo";
+            this.buttonNuevo.UseVisualStyleBackColor = true;
+            this.buttonNuevo.Click += new System.EventHandler(this.buttonCrear_Click);
             // 
             // buttonEliminar
             // 
@@ -114,7 +114,7 @@
             this.Controls.Add(this.dataGridViewUsuarios);
             this.Controls.Add(this.buttonEliminar);
             this.Controls.Add(this.buttonModificar);
-            this.Controls.Add(this.buttonCrear);
+            this.Controls.Add(this.buttonNuevo);
             this.Name = "UserControlListadoUsuarios";
             this.Size = new System.Drawing.Size(600, 400);
             this.Load += new System.EventHandler(this.UserControlListadoUsuarios_Load);
@@ -125,7 +125,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button buttonCrear;
+        private System.Windows.Forms.Button buttonNuevo;
         private System.Windows.Forms.Button buttonEliminar;
         private System.Windows.Forms.Button buttonModificar;
         private System.Windows.Forms.DataGridView dataGridViewUsuarios;
