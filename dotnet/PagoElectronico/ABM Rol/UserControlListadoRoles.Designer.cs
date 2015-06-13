@@ -46,7 +46,7 @@
             this.buttonNuevo.TabIndex = 1;
             this.buttonNuevo.Text = "Nuevo";
             this.buttonNuevo.UseVisualStyleBackColor = true;
-            this.buttonNuevo.Click += new System.EventHandler(this.buttonAlta_Click);
+            this.buttonNuevo.Click += new System.EventHandler(buttonAlta_Click);
             // 
             // dataGridViewRoles
             // 
@@ -117,7 +117,7 @@
             this.Controls.Add(this.buttonNuevo);
             this.Name = "UserControlListadoRoles";
             this.Size = new System.Drawing.Size(600, 400);
-            this.Load += new System.EventHandler(this.UserControlListadoRoles_Load);
+            this.Load += new System.EventHandler(UserControlListadoRoles_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRoles)).EndInit();
             this.ResumeLayout(false);
 

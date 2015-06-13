@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBoxNombreRol = new System.Windows.Forms.TextBox();
+            this.textBoxNombre = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBoxRol = new System.Windows.Forms.GroupBox();
             this.textBoxId = new System.Windows.Forms.TextBox();
@@ -43,12 +43,12 @@
             this.groupBoxRol.SuspendLayout();
             this.SuspendLayout();
             // 
-            // textBoxNombreRol
+            // textBoxNombre
             // 
-            this.textBoxNombreRol.Location = new System.Drawing.Point(96, 53);
-            this.textBoxNombreRol.Name = "textBoxNombreRol";
-            this.textBoxNombreRol.Size = new System.Drawing.Size(169, 20);
-            this.textBoxNombreRol.TabIndex = 0;
+            this.textBoxNombre.Location = new System.Drawing.Point(96, 53);
+            this.textBoxNombre.Name = "textBoxNombre";
+            this.textBoxNombre.Size = new System.Drawing.Size(169, 20);
+            this.textBoxNombre.TabIndex = 0;
             // 
             // label1
             // 
@@ -67,7 +67,7 @@
             this.groupBoxRol.Controls.Add(this.listViewFuncionalidades);
             this.groupBoxRol.Controls.Add(this.label2);
             this.groupBoxRol.Controls.Add(this.label1);
-            this.groupBoxRol.Controls.Add(this.textBoxNombreRol);
+            this.groupBoxRol.Controls.Add(this.textBoxNombre);
             this.groupBoxRol.Location = new System.Drawing.Point(12, 12);
             this.groupBoxRol.Name = "groupBoxRol";
             this.groupBoxRol.Size = new System.Drawing.Size(360, 245);
@@ -181,7 +181,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBoxNombreRol;
+        private System.Windows.Forms.TextBox textBoxNombre;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBoxRol;
         private System.Windows.Forms.CheckBox checkBoxActivo;
