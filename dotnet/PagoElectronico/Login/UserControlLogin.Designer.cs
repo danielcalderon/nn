@@ -56,7 +56,7 @@
             this.buttonCancelar.TabIndex = 17;
             this.buttonCancelar.Text = "Cancelar";
             this.buttonCancelar.UseVisualStyleBackColor = true;
-            this.buttonCancelar.Click += new System.EventHandler(this.buttonCancelar_Click);
+            this.buttonCancelar.Click += new System.EventHandler(buttonCancelar_Click);
             // 
             // buttonIngresar
             // 
@@ -75,6 +75,7 @@
             this.textBoxPassword.PasswordChar = '•';
             this.textBoxPassword.Size = new System.Drawing.Size(167, 20);
             this.textBoxPassword.TabIndex = 15;
+            this.textBoxPassword.Text = "w23e";
             this.textBoxPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.UserControlLogin_KeyPress);
             // 
             // textBoxUsuario
@@ -83,6 +84,7 @@
             this.textBoxUsuario.Name = "textBoxUsuario";
             this.textBoxUsuario.Size = new System.Drawing.Size(167, 20);
             this.textBoxUsuario.TabIndex = 14;
+            this.textBoxUsuario.Text = "admin";
             this.textBoxUsuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.UserControlLogin_KeyPress);
             // 
             // label2

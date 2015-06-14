@@ -30,15 +30,16 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cambiarContraseñaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cuentasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.estadísticasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.operacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.depósitosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.retirosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.transferenciasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.facturaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saldosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.estadísticasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.estadísticasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.administracionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rolesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -46,7 +47,6 @@
             this.panelPrincipal = new System.Windows.Forms.Panel();
             this.labelUsuario = new System.Windows.Forms.Label();
             this.labelRol = new System.Windows.Forms.Label();
-            this.cambiarContraseñaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,10 +55,10 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.archivoToolStripMenuItem,
             this.cuentasToolStripMenuItem1,
-            this.estadísticasToolStripMenuItem,
+            this.operacionesToolStripMenuItem,
             this.facturaciónToolStripMenuItem,
             this.saldosToolStripMenuItem,
-            this.estadísticasToolStripMenuItem1,
+            this.estadísticasToolStripMenuItem,
             this.administracionToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -75,6 +75,14 @@
             this.archivoToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
             this.archivoToolStripMenuItem.Text = "Archivo";
             // 
+            // cambiarContraseñaToolStripMenuItem
+            // 
+            this.cambiarContraseñaToolStripMenuItem.Name = "cambiarContraseñaToolStripMenuItem";
+            this.cambiarContraseñaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cambiarContraseñaToolStripMenuItem.Text = "Cambiar contraseña";
+            this.cambiarContraseñaToolStripMenuItem.Visible = false;
+            this.cambiarContraseñaToolStripMenuItem.Click += new System.EventHandler(this.cambiarContraseñaToolStripMenuItem_Click);
+            // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
@@ -87,37 +95,41 @@
             this.cuentasToolStripMenuItem1.Name = "cuentasToolStripMenuItem1";
             this.cuentasToolStripMenuItem1.Size = new System.Drawing.Size(62, 20);
             this.cuentasToolStripMenuItem1.Text = "Cuentas";
+            this.cuentasToolStripMenuItem1.Visible = false;
             this.cuentasToolStripMenuItem1.Click += new System.EventHandler(this.cuentasToolStripMenuItem_Click);
             // 
-            // estadísticasToolStripMenuItem
+            // operacionesToolStripMenuItem
             // 
-            this.estadísticasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.operacionesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.depósitosToolStripMenuItem,
             this.retirosToolStripMenuItem,
             this.transferenciasToolStripMenuItem1});
-            this.estadísticasToolStripMenuItem.Name = "estadísticasToolStripMenuItem";
-            this.estadísticasToolStripMenuItem.Size = new System.Drawing.Size(85, 20);
-            this.estadísticasToolStripMenuItem.Text = "Operaciones";
+            this.operacionesToolStripMenuItem.Name = "operacionesToolStripMenuItem";
+            this.operacionesToolStripMenuItem.Size = new System.Drawing.Size(85, 20);
+            this.operacionesToolStripMenuItem.Text = "Operaciones";
             // 
             // depósitosToolStripMenuItem
             // 
             this.depósitosToolStripMenuItem.Name = "depósitosToolStripMenuItem";
-            this.depósitosToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
+            this.depósitosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.depósitosToolStripMenuItem.Text = "Depósitos";
+            this.depósitosToolStripMenuItem.Visible = false;
             this.depósitosToolStripMenuItem.Click += new System.EventHandler(this.depósitosToolStripMenuItem_Click);
             // 
             // retirosToolStripMenuItem
             // 
             this.retirosToolStripMenuItem.Name = "retirosToolStripMenuItem";
-            this.retirosToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
+            this.retirosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.retirosToolStripMenuItem.Text = "Retiros";
+            this.retirosToolStripMenuItem.Visible = false;
             this.retirosToolStripMenuItem.Click += new System.EventHandler(this.retirosToolStripMenuItem_Click);
             // 
             // transferenciasToolStripMenuItem1
             // 
             this.transferenciasToolStripMenuItem1.Name = "transferenciasToolStripMenuItem1";
-            this.transferenciasToolStripMenuItem1.Size = new System.Drawing.Size(150, 22);
+            this.transferenciasToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.transferenciasToolStripMenuItem1.Text = "Transferencias";
+            this.transferenciasToolStripMenuItem1.Visible = false;
             this.transferenciasToolStripMenuItem1.Click += new System.EventHandler(this.transferenciasToolStripMenuItem_Click);
             // 
             // facturaciónToolStripMenuItem
@@ -134,11 +146,11 @@
             this.saldosToolStripMenuItem.Text = "Saldos";
             this.saldosToolStripMenuItem.Click += new System.EventHandler(this.saldosToolStripMenuItem_Click);
             // 
-            // estadísticasToolStripMenuItem1
+            // estadísticasToolStripMenuItem
             // 
-            this.estadísticasToolStripMenuItem1.Name = "estadísticasToolStripMenuItem1";
-            this.estadísticasToolStripMenuItem1.Size = new System.Drawing.Size(79, 20);
-            this.estadísticasToolStripMenuItem1.Text = "Estadísticas";
+            this.estadísticasToolStripMenuItem.Name = "estadísticasToolStripMenuItem";
+            this.estadísticasToolStripMenuItem.Size = new System.Drawing.Size(79, 20);
+            this.estadísticasToolStripMenuItem.Text = "Estadísticas";
             // 
             // administracionToolStripMenuItem
             // 
@@ -153,22 +165,25 @@
             // rolesToolStripMenuItem
             // 
             this.rolesToolStripMenuItem.Name = "rolesToolStripMenuItem";
-            this.rolesToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
+            this.rolesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.rolesToolStripMenuItem.Text = "Roles";
+            this.rolesToolStripMenuItem.Visible = false;
             this.rolesToolStripMenuItem.Click += new System.EventHandler(this.rolesToolStripMenuItem_Click);
             // 
             // usuariosToolStripMenuItem
             // 
             this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
-            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
+            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.usuariosToolStripMenuItem.Text = "Usuarios";
+            this.usuariosToolStripMenuItem.Visible = false;
             this.usuariosToolStripMenuItem.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click);
             // 
             // clientesToolStripMenuItem
             // 
             this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
-            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
+            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.clientesToolStripMenuItem.Text = "Clientes";
+            this.clientesToolStripMenuItem.Visible = false;
             this.clientesToolStripMenuItem.Click += new System.EventHandler(this.clientesToolStripMenuItem_Click);
             // 
             // panelPrincipal
@@ -198,13 +213,6 @@
             this.labelRol.TabIndex = 3;
             this.labelRol.Text = "Rol: ";
             this.labelRol.Visible = false;
-            // 
-            // cambiarContraseñaToolStripMenuItem
-            // 
-            this.cambiarContraseñaToolStripMenuItem.Name = "cambiarContraseñaToolStripMenuItem";
-            this.cambiarContraseñaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.cambiarContraseñaToolStripMenuItem.Text = "Cambiar contraseña";
-            this.cambiarContraseñaToolStripMenuItem.Click += new System.EventHandler(this.cambiarContraseñaToolStripMenuItem_Click);
             // 
             // FormMain
             // 
@@ -240,12 +248,12 @@
         private System.Windows.Forms.ToolStripMenuItem saldosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem archivoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem estadísticasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem operacionesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem facturaciónToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem depósitosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem retirosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem transferenciasToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem estadísticasToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem estadísticasToolStripMenuItem;
         private System.Windows.Forms.Label labelUsuario;
         private System.Windows.Forms.Label labelRol;
         private System.Windows.Forms.ToolStripMenuItem cambiarContraseñaToolStripMenuItem;

@@ -31,8 +31,8 @@
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBoxRoles = new System.Windows.Forms.ComboBox();
-            this.buttonAceptar = new System.Windows.Forms.Button();
             this.rolBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.buttonAceptar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.rolBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,6 +49,7 @@
             // 
             this.comboBoxRoles.DataSource = this.rolBindingSource;
             this.comboBoxRoles.DisplayMember = "Nombre";
+            this.comboBoxRoles.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxRoles.FormattingEnabled = true;
             this.comboBoxRoles.Location = new System.Drawing.Point(109, 59);
             this.comboBoxRoles.Name = "comboBoxRoles";

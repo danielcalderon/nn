@@ -116,7 +116,9 @@
     </Compile>
     <Compile Include="DAO\FuncionalidadDAO.cs" />
     <Compile Include="DAO\GenericDAO.cs" />
+    <Compile Include="DAO\LoginDAO.cs" />
     <Compile Include="DAO\RolDAO.cs" />
+    <Compile Include="DAO\UsuarioDAO.cs" />
     <Compile Include="Depositos\UserControlDepositos.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -125,6 +127,7 @@
     </Compile>
     <Compile Include="Entidades de negocio\Funcionalidad.cs" />
     <Compile Include="Entidades de negocio\Rol.cs" />
+    <Compile Include="Entidades de negocio\Usuario.cs" />
     <Compile Include="Facturacion\UserControlFacturacion.cs">
       <SubType>UserControl</SubType>
     </Compile>

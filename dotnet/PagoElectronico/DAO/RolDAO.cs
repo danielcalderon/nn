@@ -11,7 +11,7 @@ namespace PagoElectronico.DAO
         public List<Rol> ObtenerRoles()
         {
             const string queryString = "SELECT Rol_Id, Rol_Nombre, Rol_Activo from Rol";
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
                 SqlCommand command = new SqlCommand(queryString, connection);
                 try
@@ -40,7 +40,7 @@ namespace PagoElectronico.DAO
 
         public Rol ObtenerRol(int idRol)
         {
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
                 try
                 {
@@ -87,7 +87,7 @@ namespace PagoElectronico.DAO
 
         public bool GuardarRol(Rol rol)
         {
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
                 connection.Open();
                 SqlTransaction transaction = connection.BeginTransaction();
@@ -116,7 +116,7 @@ namespace PagoElectronico.DAO
 
         public bool ModificarRol(Rol rol)
         {
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
                 connection.Open();
                 SqlTransaction transaction = connection.BeginTransaction();

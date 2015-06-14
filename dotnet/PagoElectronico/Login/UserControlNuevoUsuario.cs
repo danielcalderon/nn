@@ -1,4 +1,6 @@
 ﻿using System.Windows.Forms;
+using PagoElectronico.DAO;
+using PagoElectronico.Entidades_de_negocio;
 
 namespace PagoElectronico.Login
 {
@@ -37,7 +39,21 @@ namespace PagoElectronico.Login
                 MessageBox.Show("Las contraseñas no coinciden", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            MessageBox.Show("Creo el nuevo usuario");
+            UsuarioDAO usuarioDao = new UsuarioDAO();
+            Usuario usuarioExistente = usuarioDao.ObtenerUsuario(textBoxUsuario.Text.Trim());
+            if (usuarioExistente != null)
+            {
+                MessageBox.Show("El nombre de usuario no está disponible", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            Usuario usuario = new Usuario();
+            usuario.Nombre = textBoxUsuario.Text.Trim();
+            usuario.Password = textBoxPassword.Text;
+            usuario.Pregunta = textBoxPregunta.Text.Trim();
+            usuario.Respuesta = textBoxRespuesta.Text.Trim();
+            usuario.Activo = true;
+            usuarioDao.GuardarUsuario(usuario);
+            MessageBox.Show("El usuario se creó correctamente");
         }
     }
 }

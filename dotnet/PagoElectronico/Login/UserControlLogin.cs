@@ -20,7 +20,7 @@ namespace PagoElectronico.Login
             formLogin.Login(textBoxUsuario.Text.Trim(), textBoxPassword.Text);
         }
 
-        private void buttonCancelar_Click(object sender, EventArgs e)
+        private static void buttonCancelar_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
@@ -40,11 +40,12 @@ namespace PagoElectronico.Login
             {
                 return;
             }
-            Form formLogin = (Form)TopLevelControl;
-            if (formLogin != null)
+            FormLogin formLogin = (FormLogin)TopLevelControl;
+            if (formLogin == null)
             {
-                formLogin.Close();
+                return;
             }
+            formLogin.Login(textBoxUsuario.Text.Trim(), textBoxPassword.Text);
         }
     }
 }

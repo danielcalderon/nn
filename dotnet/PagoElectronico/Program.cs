@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Windows.Forms;
+using PagoElectronico.Entidades_de_negocio;
 
 namespace PagoElectronico
 {
     static class Program
     {
-        public static string Usuario { get; set; }
+        public static Usuario Usuario { get; set; }
 
-        public static string Rol { get; set; }
+        public static Rol Rol { get; set; }
 
         [STAThread]
         static void Main()

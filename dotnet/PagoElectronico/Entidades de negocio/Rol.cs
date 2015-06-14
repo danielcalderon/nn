@@ -2,7 +2,7 @@
 
 namespace PagoElectronico.Entidades_de_negocio
 {
-    class Rol
+    public class Rol
     {
         public int Id { get; set; }
         public string Nombre { get; set; }

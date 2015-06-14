@@ -1,6 +1,9 @@
 ﻿using System;
+using System.Linq;
 using System.Windows.Forms;
 using PagoElectronico.ABM_Rol;
+using PagoElectronico.DAO;
+using PagoElectronico.Entidades_de_negocio;
 using PagoElectronico.Login;
 using PagoElectronico.ABM_de_Usuario;
 using PagoElectronico.ABM_Cliente;
@@ -25,9 +28,51 @@ namespace PagoElectronico
             FormLogin formLogin = new FormLogin();
             formLogin.ShowDialog();
             labelUsuario.Visible = true;
-            labelUsuario.Text += Program.Usuario;
+            if (Program.Usuario == null) return;
+            if (Program.Rol == null) return;
+            labelUsuario.Text += Program.Usuario.Nombre;
             labelRol.Visible = true;
-            labelRol.Text += Program.Rol;
+            labelRol.Text += Program.Rol.Nombre;
+
+            RolDAO rolDao = new RolDAO();
+            Rol rol = rolDao.ObtenerRol(Program.Rol.Id);
+            if (TieneFuncionalidad(rol, "Cambiar contraseña"))
+            {
+                cambiarContraseñaToolStripMenuItem.Visible = true;
+            }
+            if (TieneFuncionalidad(rol, "Depósitos"))
+            {
+                depósitosToolStripMenuItem.Visible = true;
+            }
+            if (TieneFuncionalidad(rol, "Retiros"))
+            {
+                retirosToolStripMenuItem.Visible = true;
+            }
+            if (TieneFuncionalidad(rol, "Transferencias"))
+            {
+                transferenciasToolStripMenuItem1.Visible = true;
+            }
+            if (TieneFuncionalidad(rol, "ABM Roles"))
+            {
+                rolesToolStripMenuItem.Visible = true;
+            }
+            if (TieneFuncionalidad(rol, "ABM Usuarios"))
+            {
+                usuariosToolStripMenuItem.Visible = true;
+            }
+            if (TieneFuncionalidad(rol, "ABM Clientes"))
+            {
+                clientesToolStripMenuItem.Visible = true;
+            }
+            if (TieneFuncionalidad(rol, "ABM Cuentas"))
+            {
+                cuentasToolStripMenuItem1.Visible = true;
+            }
+        }
+
+        private static bool TieneFuncionalidad(Rol rol, string funcionalidad)
+        {
+            return rol.Funcionalidades.Any(funcionalidadRol => funcionalidadRol.Nombre == funcionalidad);
         }
 
         private void rolesToolStripMenuItem_Click(object sender, EventArgs e)
