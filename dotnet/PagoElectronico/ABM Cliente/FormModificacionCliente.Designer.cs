@@ -1,6 +1,6 @@
 ﻿namespace PagoElectronico.ABM_Cliente
 {
-    partial class FormAltaCliente
+    partial class FormModificacionCliente
     {
         /// <summary>
         /// Required designer variable.
@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.comboBoxPais = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -55,15 +56,11 @@
             this.buttonCancelar = new System.Windows.Forms.Button();
             this.buttonGuardar = new System.Windows.Forms.Button();
             this.buttonLimpiar = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.buttonNuevoUsuario = new System.Windows.Forms.Button();
-            this.comboBoxUsuarios = new System.Windows.Forms.ComboBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.checkBoxUsuarioActivo = new System.Windows.Forms.CheckBox();
-            this.label13 = new System.Windows.Forms.Label();
             this.textBoxUsuario = new System.Windows.Forms.TextBox();
-            this.comboBoxPais = new System.Windows.Forms.ComboBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.checkBoxUsuarioActivo = new System.Windows.Forms.CheckBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -94,12 +91,23 @@
             this.groupBox1.Controls.Add(this.textBoxApellido);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.textBoxNombre);
-            this.groupBox1.Location = new System.Drawing.Point(12, 119);
+            this.groupBox1.Location = new System.Drawing.Point(12, 88);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(471, 207);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos del cliente";
+            // 
+            // comboBoxPais
+            // 
+            this.comboBoxPais.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.comboBoxPais.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.comboBoxPais.FormattingEnabled = true;
+            this.comboBoxPais.Location = new System.Drawing.Point(322, 83);
+            this.comboBoxPais.Name = "comboBoxPais";
+            this.comboBoxPais.Size = new System.Drawing.Size(130, 21);
+            this.comboBoxPais.TabIndex = 12;
+            this.comboBoxPais.TextChanged += new System.EventHandler(this.comboBoxPais_TextChanged);
             // 
             // label12
             // 
@@ -293,7 +301,7 @@
             // 
             // buttonCancelar
             // 
-            this.buttonCancelar.Location = new System.Drawing.Point(327, 345);
+            this.buttonCancelar.Location = new System.Drawing.Point(327, 320);
             this.buttonCancelar.Name = "buttonCancelar";
             this.buttonCancelar.Size = new System.Drawing.Size(75, 23);
             this.buttonCancelar.TabIndex = 8;
@@ -303,7 +311,7 @@
             // 
             // buttonGuardar
             // 
-            this.buttonGuardar.Location = new System.Drawing.Point(408, 345);
+            this.buttonGuardar.Location = new System.Drawing.Point(408, 320);
             this.buttonGuardar.Name = "buttonGuardar";
             this.buttonGuardar.Size = new System.Drawing.Size(75, 23);
             this.buttonGuardar.TabIndex = 7;
@@ -313,7 +321,7 @@
             // 
             // buttonLimpiar
             // 
-            this.buttonLimpiar.Location = new System.Drawing.Point(12, 345);
+            this.buttonLimpiar.Location = new System.Drawing.Point(12, 320);
             this.buttonLimpiar.Name = "buttonLimpiar";
             this.buttonLimpiar.Size = new System.Drawing.Size(75, 23);
             this.buttonLimpiar.TabIndex = 6;
@@ -321,105 +329,60 @@
             this.buttonLimpiar.UseVisualStyleBackColor = true;
             this.buttonLimpiar.Click += new System.EventHandler(this.buttonLimpiar_Click);
             // 
+            // textBoxUsuario
+            // 
+            this.textBoxUsuario.Enabled = false;
+            this.textBoxUsuario.Location = new System.Drawing.Point(96, 27);
+            this.textBoxUsuario.Name = "textBoxUsuario";
+            this.textBoxUsuario.Size = new System.Drawing.Size(130, 20);
+            this.textBoxUsuario.TabIndex = 4;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(6, 30);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(44, 13);
+            this.label13.TabIndex = 5;
+            this.label13.Text = "Nombre";
+            // 
+            // checkBoxUsuarioActivo
+            // 
+            this.checkBoxUsuarioActivo.AutoSize = true;
+            this.checkBoxUsuarioActivo.Enabled = false;
+            this.checkBoxUsuarioActivo.Location = new System.Drawing.Point(235, 30);
+            this.checkBoxUsuarioActivo.Name = "checkBoxUsuarioActivo";
+            this.checkBoxUsuarioActivo.Size = new System.Drawing.Size(15, 14);
+            this.checkBoxUsuarioActivo.TabIndex = 6;
+            this.checkBoxUsuarioActivo.UseVisualStyleBackColor = true;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(256, 30);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(75, 13);
+            this.label14.TabIndex = 7;
+            this.label14.Text = "Usuario activo";
+            // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.buttonNuevoUsuario);
-            this.groupBox2.Controls.Add(this.comboBoxUsuarios);
-            this.groupBox2.Controls.Add(this.label15);
             this.groupBox2.Controls.Add(this.label14);
             this.groupBox2.Controls.Add(this.checkBoxUsuarioActivo);
             this.groupBox2.Controls.Add(this.label13);
             this.groupBox2.Controls.Add(this.textBoxUsuario);
             this.groupBox2.Location = new System.Drawing.Point(12, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(471, 101);
+            this.groupBox2.Size = new System.Drawing.Size(471, 70);
             this.groupBox2.TabIndex = 9;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos del usuario";
             // 
-            // buttonNuevoUsuario
-            // 
-            this.buttonNuevoUsuario.Location = new System.Drawing.Point(235, 29);
-            this.buttonNuevoUsuario.Name = "buttonNuevoUsuario";
-            this.buttonNuevoUsuario.Size = new System.Drawing.Size(75, 23);
-            this.buttonNuevoUsuario.TabIndex = 11;
-            this.buttonNuevoUsuario.Text = "Nuevo";
-            this.buttonNuevoUsuario.UseVisualStyleBackColor = true;
-            this.buttonNuevoUsuario.Click += new System.EventHandler(this.buttonNuevoUsuario_Click);
-            // 
-            // comboBoxUsuarios
-            // 
-            this.comboBoxUsuarios.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.comboBoxUsuarios.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboBoxUsuarios.FormattingEnabled = true;
-            this.comboBoxUsuarios.Location = new System.Drawing.Point(96, 31);
-            this.comboBoxUsuarios.Name = "comboBoxUsuarios";
-            this.comboBoxUsuarios.Size = new System.Drawing.Size(130, 21);
-            this.comboBoxUsuarios.TabIndex = 9;
-            this.comboBoxUsuarios.SelectedIndexChanged += new System.EventHandler(this.comboBoxUsuarios_SelectedIndexChanged);
-            this.comboBoxUsuarios.TextChanged += new System.EventHandler(this.comboBoxUsuarios_TextChanged);
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(6, 34);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(77, 13);
-            this.label15.TabIndex = 8;
-            this.label15.Text = "Buscar usuario";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(256, 61);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(75, 13);
-            this.label14.TabIndex = 7;
-            this.label14.Text = "Usuario activo";
-            // 
-            // checkBoxUsuarioActivo
-            // 
-            this.checkBoxUsuarioActivo.AutoSize = true;
-            this.checkBoxUsuarioActivo.Enabled = false;
-            this.checkBoxUsuarioActivo.Location = new System.Drawing.Point(235, 61);
-            this.checkBoxUsuarioActivo.Name = "checkBoxUsuarioActivo";
-            this.checkBoxUsuarioActivo.Size = new System.Drawing.Size(15, 14);
-            this.checkBoxUsuarioActivo.TabIndex = 6;
-            this.checkBoxUsuarioActivo.UseVisualStyleBackColor = true;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(6, 61);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(44, 13);
-            this.label13.TabIndex = 5;
-            this.label13.Text = "Nombre";
-            // 
-            // textBoxUsuario
-            // 
-            this.textBoxUsuario.Enabled = false;
-            this.textBoxUsuario.Location = new System.Drawing.Point(96, 58);
-            this.textBoxUsuario.Name = "textBoxUsuario";
-            this.textBoxUsuario.Size = new System.Drawing.Size(130, 20);
-            this.textBoxUsuario.TabIndex = 4;
-            // 
-            // comboBoxPais
-            // 
-            this.comboBoxPais.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.comboBoxPais.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.comboBoxPais.FormattingEnabled = true;
-            this.comboBoxPais.Location = new System.Drawing.Point(322, 83);
-            this.comboBoxPais.Name = "comboBoxPais";
-            this.comboBoxPais.Size = new System.Drawing.Size(130, 21);
-            this.comboBoxPais.TabIndex = 12;
-            this.comboBoxPais.TextChanged += new System.EventHandler(this.comboBoxPais_TextChanged);
-            // 
-            // FormAltaCliente
+            // FormModificacionCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(495, 380);
+            this.ClientSize = new System.Drawing.Size(495, 355);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.buttonCancelar);
             this.Controls.Add(this.buttonGuardar);
@@ -427,10 +390,10 @@
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
-            this.Name = "FormAltaCliente";
+            this.Name = "FormModificacionCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nuevo Cliente";
-            this.Load += new System.EventHandler(this.FormAltaCliente_Load);
+            this.Load += new System.EventHandler(this.FormModificacionCliente_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -468,14 +431,11 @@
         private System.Windows.Forms.Button buttonCancelar;
         private System.Windows.Forms.Button buttonGuardar;
         private System.Windows.Forms.Button buttonLimpiar;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.ComboBox comboBoxPais;
         private System.Windows.Forms.TextBox textBoxUsuario;
+        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.CheckBox checkBoxUsuarioActivo;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Button buttonNuevoUsuario;
-        private System.Windows.Forms.ComboBox comboBoxUsuarios;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.ComboBox comboBoxPais;
+        private System.Windows.Forms.GroupBox groupBox2;
     }
 }

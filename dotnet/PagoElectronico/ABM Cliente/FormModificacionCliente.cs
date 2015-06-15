@@ -2,22 +2,24 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
-using PagoElectronico.ABM_de_Usuario;
 using PagoElectronico.DAO;
 using PagoElectronico.Entidades_de_negocio;
 
 namespace PagoElectronico.ABM_Cliente
 {
-    public partial class FormAltaCliente : Form
+    public partial class FormModificacionCliente : Form
     {
-        private Usuario _usuario;
+        private readonly int _tipoDocumentoCliente;
+        private readonly long _documentoCliente;
 
-        public FormAltaCliente()
+        public FormModificacionCliente(int tipoDocumentoCliente, long documentoCliente)
         {
+            _documentoCliente = documentoCliente;
+            _tipoDocumentoCliente = tipoDocumentoCliente;
             InitializeComponent();
         }
 
-        private void FormAltaCliente_Load(object sender, EventArgs e)
+        private void FormModificacionCliente_Load(object sender, EventArgs e)
         {
             TipoDocumentoDAO documentoDao = new TipoDocumentoDAO();
             List<TipoDocumento> documentos = documentoDao.ObtenerDocumentos();
@@ -26,6 +28,28 @@ namespace PagoElectronico.ABM_Cliente
             comboBoxTipoDoc.DisplayMember = "Value";
             comboBoxTipoDoc.ValueMember = "Key";
             comboBoxTipoDoc.SelectedIndex = 0;
+
+            CargarCliente();
+        }
+
+        private void CargarCliente()
+        {
+            ClienteDAO clienteDao = new ClienteDAO();
+            Cliente cliente = clienteDao.ObtenerCliente(_tipoDocumentoCliente, _documentoCliente);
+            textBoxNombre.Text = cliente.Nombre;
+            textBoxApellido.Text = cliente.Apellido;
+            comboBoxTipoDoc.SelectedItem = new KeyValuePair<int, string>(cliente.TipoDocumento.Id, cliente.TipoDocumento.Nombre);
+            textBoxNumeroDoc.Text = cliente.Documento.ToString();
+            textBoxEmail.Text = cliente.Email;
+            comboBoxPais.SelectedItem = new KeyValuePair<int, string>(cliente.Pais.Id, cliente.Pais.Nombre);
+            textBoxCalle.Text = cliente.Calle;
+            textBoxPiso.Text = cliente.Piso;
+            textBoxDepartamento.Text = cliente.Departamento;
+            textBoxLocalidad.Text = cliente.Localidad;
+            textBoxNacionalidad.Text = cliente.Nacionalidad;
+            dateTimePickerFechaNacimiento.Value = cliente.FechaNacimiento;
+
+            CargarUsuario(cliente.Nombre);
         }
 
         private void buttonLimpiar_Click(object sender, EventArgs e)
@@ -130,7 +154,7 @@ namespace PagoElectronico.ABM_Cliente
             cliente.Localidad = textBoxLocalidad.Text.Trim();
             cliente.Nacionalidad = textBoxNacionalidad.Text.Trim();
             cliente.FechaNacimiento = dateTimePickerFechaNacimiento.Value;
-            cliente.Usuario = _usuario;
+            //cliente.Usuario = _usuario;
             clienteDao.GuardarCliente(cliente);
             MessageBox.Show("El cliente se creó correctamente");
         }
@@ -138,32 +162,6 @@ namespace PagoElectronico.ABM_Cliente
         private void buttonCancelar_Click(object sender, EventArgs e)
         {
             Close();
-        }
-
-        private void buttonNuevoUsuario_Click(object sender, EventArgs e)
-        {
-            FormAltaUsuario formAltaUsuario = new FormAltaUsuario();
-            formAltaUsuario.ShowDialog();
-            CargarUsuario(formAltaUsuario.Usuario);
-        }
-
-        private void comboBoxUsuarios_TextChanged(object sender, EventArgs e)
-        {
-            string queryNombre = comboBoxUsuarios.Text.Trim();
-            if (queryNombre.Length == 0) return;
-            UsuarioDAO usuarioDao = new UsuarioDAO();
-            List<Usuario> usuarios = usuarioDao.BuscarUsuarios(queryNombre);
-            Dictionary<int, string> usuariosCombo = usuarios.ToDictionary(usuario => usuario.Id, usuario => usuario.Nombre);
-            if (usuariosCombo.Count > 0)
-            {
-                comboBoxUsuarios.DataSource = new BindingSource(usuariosCombo, null);
-                comboBoxUsuarios.DisplayMember = "Value";
-                comboBoxUsuarios.ValueMember = "Key";
-            }
-            else
-            {
-                comboBoxUsuarios.DataSource = null;
-            }
         }
 
         private void comboBoxPais_TextChanged(object sender, EventArgs e)
@@ -185,20 +183,12 @@ namespace PagoElectronico.ABM_Cliente
             }
         }
 
-        private void comboBoxUsuarios_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            KeyValuePair<int, string> item = (KeyValuePair<int, string>)comboBoxUsuarios.SelectedItem;
-            string nombreUsuario = item.Value;
-            CargarUsuario(nombreUsuario);
-        }
-
-        public void CargarUsuario(string nombreUsuario)
+        private void CargarUsuario(string nombreUsuario)
         {
             UsuarioDAO usuarioDao = new UsuarioDAO();
             Usuario usuario = usuarioDao.ObtenerUsuario(nombreUsuario);
             textBoxUsuario.Text = usuario.Nombre;
             checkBoxUsuarioActivo.Checked = usuario.Activo;
-            _usuario = usuario;
         }
 
         private void textBoxNumeroDoc_KeyPress(object sender, KeyPressEventArgs e)

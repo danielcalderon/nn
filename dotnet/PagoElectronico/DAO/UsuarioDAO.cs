@@ -126,5 +126,35 @@ namespace PagoElectronico.DAO
             string hashValue = Convert.ToBase64String(hashBytes);
             return hashValue;
         }
+
+        internal List<Usuario> BuscarUsuarios(string queryNombre)
+        {
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            {
+                try
+                {
+                    string queryString = "SELECT TOP 10 Usu_Id, Usu_Nombre, Usu_Activo FROM Usuario where UPPER(Usu_Nombre) LIKE '" + queryNombre.ToUpper() + "%'";
+                    SqlCommand command = new SqlCommand(queryString, connection);
+                    connection.Open();
+                    SqlDataReader reader = command.ExecuteReader();
+                    List<Usuario> usuarios = new List<Usuario>();
+                    while (reader.Read())
+                    {
+                        Usuario usuario = new Usuario();
+                        usuario.Id = int.Parse(reader[0].ToString());
+                        usuario.Nombre = reader[1].ToString();
+                        usuario.Activo = bool.Parse(reader[2].ToString());
+                        usuarios.Add(usuario);
+                    }
+                    reader.Close();
+                    return usuarios;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                    return null;
+                }
+            }
+        }
     }
 }
