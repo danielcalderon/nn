@@ -1,0 +1,4 @@
+en la migración de clientes les asigno a cada uno un user por defecto y una password 123456
+falta el cambio de contraseña 
+sacarle el caracter raro a los paises
+referencias tarjetas-clientes-depositos
