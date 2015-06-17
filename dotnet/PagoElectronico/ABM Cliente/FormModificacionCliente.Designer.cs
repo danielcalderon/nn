@@ -61,12 +61,14 @@
             this.checkBoxUsuarioActivo = new System.Windows.Forms.CheckBox();
             this.label14 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.checkBoxActivo = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.checkBoxActivo);
             this.groupBox1.Controls.Add(this.comboBoxPais);
             this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.label11);
@@ -93,7 +95,7 @@
             this.groupBox1.Controls.Add(this.textBoxNombre);
             this.groupBox1.Location = new System.Drawing.Point(12, 88);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(471, 207);
+            this.groupBox1.Size = new System.Drawing.Size(471, 232);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos del cliente";
@@ -301,7 +303,7 @@
             // 
             // buttonCancelar
             // 
-            this.buttonCancelar.Location = new System.Drawing.Point(327, 320);
+            this.buttonCancelar.Location = new System.Drawing.Point(327, 348);
             this.buttonCancelar.Name = "buttonCancelar";
             this.buttonCancelar.Size = new System.Drawing.Size(75, 23);
             this.buttonCancelar.TabIndex = 8;
@@ -311,7 +313,7 @@
             // 
             // buttonGuardar
             // 
-            this.buttonGuardar.Location = new System.Drawing.Point(408, 320);
+            this.buttonGuardar.Location = new System.Drawing.Point(408, 348);
             this.buttonGuardar.Name = "buttonGuardar";
             this.buttonGuardar.Size = new System.Drawing.Size(75, 23);
             this.buttonGuardar.TabIndex = 7;
@@ -321,7 +323,7 @@
             // 
             // buttonLimpiar
             // 
-            this.buttonLimpiar.Location = new System.Drawing.Point(12, 320);
+            this.buttonLimpiar.Location = new System.Drawing.Point(12, 348);
             this.buttonLimpiar.Name = "buttonLimpiar";
             this.buttonLimpiar.Size = new System.Drawing.Size(75, 23);
             this.buttonLimpiar.TabIndex = 6;
@@ -378,11 +380,21 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos del usuario";
             // 
+            // checkBoxActivo
+            // 
+            this.checkBoxActivo.AutoSize = true;
+            this.checkBoxActivo.Location = new System.Drawing.Point(9, 194);
+            this.checkBoxActivo.Name = "checkBoxActivo";
+            this.checkBoxActivo.Size = new System.Drawing.Size(56, 17);
+            this.checkBoxActivo.TabIndex = 28;
+            this.checkBoxActivo.Text = "Activo";
+            this.checkBoxActivo.UseVisualStyleBackColor = true;
+            // 
             // FormModificacionCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(495, 355);
+            this.ClientSize = new System.Drawing.Size(495, 383);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.buttonCancelar);
             this.Controls.Add(this.buttonGuardar);
@@ -392,7 +404,7 @@
             this.MaximizeBox = false;
             this.Name = "FormModificacionCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Nuevo Cliente";
+            this.Text = "Modificar Cliente";
             this.Load += new System.EventHandler(this.FormModificacionCliente_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -437,5 +449,6 @@
         private System.Windows.Forms.CheckBox checkBoxUsuarioActivo;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.CheckBox checkBoxActivo;
     }
 }

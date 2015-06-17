@@ -58,6 +58,13 @@ namespace PagoElectronico.ABM_de_Usuario
             usuario.Pregunta = textBoxPregunta.Text.Trim();
             usuario.Respuesta = textBoxRespuesta.Text.Trim();
             usuario.Activo = true;
+            usuario.Roles = new List<Rol>();
+            foreach (ListViewItem listViewItem in listViewRoles.CheckedItems)
+            {
+                Rol rol = new Rol();
+                rol.Id = (int) listViewItem.Tag;
+                usuario.Roles.Add(rol);
+            }
             usuarioDao.GuardarUsuario(usuario);
             MessageBox.Show("El usuario se creó correctamente");
             Usuario = usuario.Nombre;

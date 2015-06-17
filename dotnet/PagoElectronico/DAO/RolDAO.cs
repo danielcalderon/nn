@@ -10,7 +10,7 @@ namespace PagoElectronico.DAO
     {
         public List<Rol> ObtenerRoles()
         {
-            const string queryString = "SELECT Rol_Id, Rol_Nombre, Rol_Activo from Rol";
+            const string queryString = "SELECT Rol_Id, Rol_Nombre, Rol_Activo from NN.Rol";
             using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
                 SqlCommand command = new SqlCommand(queryString, connection);
@@ -44,7 +44,7 @@ namespace PagoElectronico.DAO
             {
                 try
                 {
-                    string queryString = "SELECT Rol_Id, Rol_Nombre, Rol_Activo FROM Rol where Rol_Id = " + idRol;
+                    string queryString = "SELECT Rol_Id, Rol_Nombre, Rol_Activo FROM NN.Rol where Rol_Id = " + idRol;
                     SqlCommand command = new SqlCommand(queryString, connection);
                     connection.Open();
                     SqlDataReader reader = command.ExecuteReader();
@@ -60,7 +60,55 @@ namespace PagoElectronico.DAO
 
                     if(rol != null)
                     {
-                        queryString = "SELECT F.Func_Id, Func_Nombre FROM FuncionalidadXRol R, Funcionalidad F where F.Func_Id = R.Func_Id and Rol_Id = " + idRol;
+                        queryString = "SELECT F.Func_Id, Func_Nombre FROM NN.FuncionalidadXRol R, NN.Funcionalidad F where F.Func_Id = R.Func_Id and Rol_Id = " + idRol;
+                        command = new SqlCommand(queryString, connection);
+                        List<Funcionalidad> funcionalidades = new List<Funcionalidad>();
+                        reader = command.ExecuteReader();
+                        while (reader.Read())
+                        {
+                            Funcionalidad funcionalidad = new Funcionalidad();
+                            funcionalidad.Id = int.Parse(reader[0].ToString());
+                            funcionalidad.Nombre = reader[1].ToString();
+                            funcionalidades.Add(funcionalidad);
+                        }
+                        reader.Close();
+                        rol.Funcionalidades = funcionalidades;
+                    }
+
+                    return rol;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                    return null;
+                }
+            }
+        }
+
+
+        public Rol ObtenerRol(string nombreRol)
+        {
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            {
+                try
+                {
+                    string queryString = "SELECT Rol_Id, Rol_Nombre, Rol_Activo FROM NN.Rol where Rol_Nombre = '" + nombreRol + "'";
+                    SqlCommand command = new SqlCommand(queryString, connection);
+                    connection.Open();
+                    SqlDataReader reader = command.ExecuteReader();
+                    Rol rol = null;
+                    if (reader.Read())
+                    {
+                        rol = new Rol();
+                        rol.Id = int.Parse(reader[0].ToString());
+                        rol.Nombre = reader[1].ToString();
+                        rol.Activo = bool.Parse(reader[2].ToString());
+                    }
+                    reader.Close();
+
+                    if (rol != null)
+                    {
+                        queryString = "SELECT F.Func_Id, Func_Nombre FROM NN.FuncionalidadXRol R, NN.Funcionalidad F where F.Func_Id = R.Func_Id and Rol_Id = " + rol.Id;
                         command = new SqlCommand(queryString, connection);
                         List<Funcionalidad> funcionalidades = new List<Funcionalidad>();
                         reader = command.ExecuteReader();
@@ -95,11 +143,11 @@ namespace PagoElectronico.DAO
                 command.Transaction = transaction;
                 try
                 {
-                    command.CommandText = "INSERT INTO Rol (Rol_Nombre, Rol_Activo) VALUES ('" + rol.Nombre + "', '" + rol.Activo + "'); SELECT CAST(scope_identity() AS int);";
+                    command.CommandText = "INSERT INTO NN.Rol (Rol_Nombre, Rol_Activo) VALUES ('" + rol.Nombre + "', '" + rol.Activo + "'); SELECT CAST(scope_identity() AS int);";
                     int idRol = (int)command.ExecuteScalar();
                     foreach (Funcionalidad funcionalidad in rol.Funcionalidades)
                     {
-                        command.CommandText = "INSERT INTO FuncionalidadXRol (Func_Id, Rol_Id) VALUES (" + funcionalidad.Id + ", " + idRol + ");";
+                        command.CommandText = "INSERT INTO NN.FuncionalidadXRol (Func_Id, Rol_Id) VALUES (" + funcionalidad.Id + ", " + idRol + ");";
                         command.ExecuteNonQuery();
                     }
                     transaction.Commit();
@@ -124,13 +172,13 @@ namespace PagoElectronico.DAO
                 command.Transaction = transaction;
                 try
                 {
-                    command.CommandText = "UPDATE Rol SET Rol_Nombre = '" + rol.Nombre + "', Rol_Activo = '" + rol.Activo + "' WHERE Rol_Id = " + rol.Id + ";";
+                    command.CommandText = "UPDATE NN.Rol SET Rol_Nombre = '" + rol.Nombre + "', Rol_Activo = '" + rol.Activo + "' WHERE Rol_Id = " + rol.Id + ";";
                     command.ExecuteNonQuery();
-                    command.CommandText = "DELETE FROM FuncionalidadXRol WHERE Rol_Id = " + rol.Id + ";";
+                    command.CommandText = "DELETE FROM NN.FuncionalidadXRol WHERE Rol_Id = " + rol.Id + ";";
                     command.ExecuteNonQuery();
                     foreach (Funcionalidad funcionalidad in rol.Funcionalidades)
                     {
-                        command.CommandText = "INSERT INTO FuncionalidadXRol (Func_Id, Rol_Id) VALUES (" + funcionalidad.Id + ", " + rol.Id + ");";
+                        command.CommandText = "INSERT INTO NN.FuncionalidadXRol (Func_Id, Rol_Id) VALUES (" + funcionalidad.Id + ", " + rol.Id + ");";
                         command.ExecuteNonQuery();
                     }
                     transaction.Commit();

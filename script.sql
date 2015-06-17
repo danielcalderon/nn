@@ -1,9 +1,9 @@
 USE [GD1C2015]
 GO
-/****** Object:  Schema [NN]    Script Date: 06/15/2015 15:25:45 ******/
+/****** Object:  Schema [NN]    Script Date: 06/16/2015 15:55:03 ******/
 CREATE SCHEMA [NN] AUTHORIZATION [gd]
 GO
-/****** Object:  Table [NN].[Usuario]    Script Date: 06/15/2015 15:25:46 ******/
+/****** Object:  Table [NN].[Usuario]    Script Date: 06/16/2015 15:55:04 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -30,7 +30,7 @@ CREATE TABLE [NN].[Usuario](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [NN].[Transferencias]    Script Date: 06/15/2015 15:25:46 ******/
+/****** Object:  Table [NN].[Transferencias]    Script Date: 06/16/2015 15:55:04 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -48,7 +48,7 @@ CREATE TABLE [NN].[Transferencias](
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [NN].[Tipo_de_Cuentas]    Script Date: 06/15/2015 15:25:46 ******/
+/****** Object:  Table [NN].[Tipo_de_Cuentas]    Script Date: 06/16/2015 15:55:04 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -66,7 +66,7 @@ CREATE TABLE [NN].[Tipo_de_Cuentas](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [NN].[Cheques]    Script Date: 06/15/2015 15:25:46 ******/
+/****** Object:  Table [NN].[Cheques]    Script Date: 06/16/2015 15:55:04 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -82,7 +82,7 @@ CREATE TABLE [NN].[Cheques](
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [NN].[Bancos]    Script Date: 06/15/2015 15:25:46 ******/
+/****** Object:  Table [NN].[Bancos]    Script Date: 06/16/2015 15:55:04 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -101,7 +101,7 @@ CREATE TABLE [NN].[Bancos](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [NN].[Funcionalidad]    Script Date: 06/15/2015 15:25:46 ******/
+/****** Object:  Table [NN].[Funcionalidad]    Script Date: 06/16/2015 15:55:04 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -119,7 +119,7 @@ CREATE TABLE [NN].[Funcionalidad](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [NN].[Documentos]    Script Date: 06/15/2015 15:25:46 ******/
+/****** Object:  Table [NN].[Documentos]    Script Date: 06/16/2015 15:55:04 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -137,7 +137,7 @@ CREATE TABLE [NN].[Documentos](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [NN].[Rol]    Script Date: 06/15/2015 15:25:46 ******/
+/****** Object:  Table [NN].[Rol]    Script Date: 06/16/2015 15:55:04 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -156,7 +156,7 @@ CREATE TABLE [NN].[Rol](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [NN].[Retiros]    Script Date: 06/15/2015 15:25:46 ******/
+/****** Object:  Table [NN].[Retiros]    Script Date: 06/16/2015 15:55:04 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -175,7 +175,7 @@ CREATE TABLE [NN].[Retiros](
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [NN].[Paises]    Script Date: 06/15/2015 15:25:46 ******/
+/****** Object:  Table [NN].[Paises]    Script Date: 06/16/2015 15:55:04 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -193,7 +193,7 @@ CREATE TABLE [NN].[Paises](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [NN].[Login]    Script Date: 06/15/2015 15:25:46 ******/
+/****** Object:  Table [NN].[Login]    Script Date: 06/16/2015 15:55:04 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -216,7 +216,7 @@ CREATE TABLE [NN].[Login](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [NN].[FuncionalidadXRol]    Script Date: 06/15/2015 15:25:46 ******/
+/****** Object:  Table [NN].[FuncionalidadXRol]    Script Date: 06/16/2015 15:55:04 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -231,7 +231,7 @@ CREATE TABLE [NN].[FuncionalidadXRol](
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [NN].[Clientes]    Script Date: 06/15/2015 15:25:46 ******/
+/****** Object:  Table [NN].[Clientes]    Script Date: 06/16/2015 15:55:04 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -254,6 +254,7 @@ CREATE TABLE [NN].[Clientes](
 	[Cli_Usuario] [int] NULL,
 	[Cli_Localidad] [varchar](50) NULL,
 	[Cli_Nacionalidad] [varchar](50) NULL,
+	[Cli_Activo] [bit] NULL,
  CONSTRAINT [PK_Clientes] PRIMARY KEY CLUSTERED 
 (
 	[Cli_Id] ASC
@@ -262,7 +263,7 @@ CREATE TABLE [NN].[Clientes](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [NN].[RolXUsuario]    Script Date: 06/15/2015 15:25:46 ******/
+/****** Object:  Table [NN].[RolXUsuario]    Script Date: 06/16/2015 15:55:04 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -277,7 +278,7 @@ CREATE TABLE [NN].[RolXUsuario](
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [NN].[Tarjetas]    Script Date: 06/15/2015 15:25:46 ******/
+/****** Object:  Table [NN].[Tarjetas]    Script Date: 06/16/2015 15:55:04 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -287,6 +288,7 @@ GO
 CREATE TABLE [NN].[Tarjetas](
 	[Tarjeta_Id] [int] IDENTITY(1,1) NOT NULL,
 	[Cli_Id] [int] NULL,
+	[Cli_Tipo_Doc] [int] NULL,
 	[Cli_Nro_Doc] [numeric](18, 0) NULL,
 	[Tarjeta_Numero] [varchar](16) NULL,
 	[Tarjeta_Codigo_Seg] [varchar](3) NULL,
@@ -301,7 +303,7 @@ CREATE TABLE [NN].[Tarjetas](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [NN].[Cuentas]    Script Date: 06/15/2015 15:25:46 ******/
+/****** Object:  Table [NN].[Cuentas]    Script Date: 06/16/2015 15:55:04 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -327,7 +329,7 @@ CREATE TABLE [NN].[Cuentas](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [NN].[Depositos]    Script Date: 06/15/2015 15:25:46 ******/
+/****** Object:  Table [NN].[Depositos]    Script Date: 06/16/2015 15:55:04 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -351,67 +353,70 @@ CREATE TABLE [NN].[Depositos](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  ForeignKey [FK_Clientes_Documentos]    Script Date: 06/15/2015 15:25:46 ******/
+/****** Object:  Default [DF_Clientes_Cli_Activo]    Script Date: 06/16/2015 15:55:04 ******/
+ALTER TABLE [NN].[Clientes] ADD  CONSTRAINT [DF_Clientes_Cli_Activo]  DEFAULT ((1)) FOR [Cli_Activo]
+GO
+/****** Object:  ForeignKey [FK_Clientes_Documentos]    Script Date: 06/16/2015 15:55:04 ******/
 ALTER TABLE [NN].[Clientes]  WITH CHECK ADD  CONSTRAINT [FK_Clientes_Documentos] FOREIGN KEY([Cli_Tipo_Doc_Cod])
 REFERENCES [NN].[Documentos] ([Tipo_Doc_Cod])
 GO
 ALTER TABLE [NN].[Clientes] CHECK CONSTRAINT [FK_Clientes_Documentos]
 GO
-/****** Object:  ForeignKey [FK_Clientes_Usuario]    Script Date: 06/15/2015 15:25:46 ******/
+/****** Object:  ForeignKey [FK_Clientes_Usuario]    Script Date: 06/16/2015 15:55:04 ******/
 ALTER TABLE [NN].[Clientes]  WITH CHECK ADD  CONSTRAINT [FK_Clientes_Usuario] FOREIGN KEY([Cli_Pais_Codigo])
 REFERENCES [NN].[Paises] ([Pais_codigo])
 GO
 ALTER TABLE [NN].[Clientes] CHECK CONSTRAINT [FK_Clientes_Usuario]
 GO
-/****** Object:  ForeignKey [FK_Cuentas_Clientes]    Script Date: 06/15/2015 15:25:46 ******/
+/****** Object:  ForeignKey [FK_Cuentas_Clientes]    Script Date: 06/16/2015 15:55:04 ******/
 ALTER TABLE [NN].[Cuentas]  WITH CHECK ADD  CONSTRAINT [FK_Cuentas_Clientes] FOREIGN KEY([Cli_Id])
 REFERENCES [NN].[Clientes] ([Cli_Id])
 GO
 ALTER TABLE [NN].[Cuentas] CHECK CONSTRAINT [FK_Cuentas_Clientes]
 GO
-/****** Object:  ForeignKey [FK_Depositos_Clientes]    Script Date: 06/15/2015 15:25:46 ******/
+/****** Object:  ForeignKey [FK_Depositos_Clientes]    Script Date: 06/16/2015 15:55:04 ******/
 ALTER TABLE [NN].[Depositos]  WITH CHECK ADD  CONSTRAINT [FK_Depositos_Clientes] FOREIGN KEY([Cli_Id])
 REFERENCES [NN].[Clientes] ([Cli_Id])
 GO
 ALTER TABLE [NN].[Depositos] CHECK CONSTRAINT [FK_Depositos_Clientes]
 GO
-/****** Object:  ForeignKey [FK_Depositos_Tarjetas]    Script Date: 06/15/2015 15:25:46 ******/
+/****** Object:  ForeignKey [FK_Depositos_Tarjetas]    Script Date: 06/16/2015 15:55:04 ******/
 ALTER TABLE [NN].[Depositos]  WITH CHECK ADD  CONSTRAINT [FK_Depositos_Tarjetas] FOREIGN KEY([Tarjeta_Id])
 REFERENCES [NN].[Tarjetas] ([Tarjeta_Id])
 GO
 ALTER TABLE [NN].[Depositos] CHECK CONSTRAINT [FK_Depositos_Tarjetas]
 GO
-/****** Object:  ForeignKey [FK_FuncionalidadXRol_Funcionalidad]    Script Date: 06/15/2015 15:25:46 ******/
+/****** Object:  ForeignKey [FK_FuncionalidadXRol_Funcionalidad]    Script Date: 06/16/2015 15:55:04 ******/
 ALTER TABLE [NN].[FuncionalidadXRol]  WITH CHECK ADD  CONSTRAINT [FK_FuncionalidadXRol_Funcionalidad] FOREIGN KEY([Func_Id])
 REFERENCES [NN].[Funcionalidad] ([Func_Id])
 GO
 ALTER TABLE [NN].[FuncionalidadXRol] CHECK CONSTRAINT [FK_FuncionalidadXRol_Funcionalidad]
 GO
-/****** Object:  ForeignKey [FK_FuncionalidadXRol_Rol]    Script Date: 06/15/2015 15:25:46 ******/
+/****** Object:  ForeignKey [FK_FuncionalidadXRol_Rol]    Script Date: 06/16/2015 15:55:04 ******/
 ALTER TABLE [NN].[FuncionalidadXRol]  WITH CHECK ADD  CONSTRAINT [FK_FuncionalidadXRol_Rol] FOREIGN KEY([Rol_Id])
 REFERENCES [NN].[Rol] ([Rol_Id])
 GO
 ALTER TABLE [NN].[FuncionalidadXRol] CHECK CONSTRAINT [FK_FuncionalidadXRol_Rol]
 GO
-/****** Object:  ForeignKey [FK_Login_Usuario1]    Script Date: 06/15/2015 15:25:46 ******/
+/****** Object:  ForeignKey [FK_Login_Usuario1]    Script Date: 06/16/2015 15:55:04 ******/
 ALTER TABLE [NN].[Login]  WITH CHECK ADD  CONSTRAINT [FK_Login_Usuario1] FOREIGN KEY([Login_UsuarioId])
 REFERENCES [NN].[Usuario] ([Usu_Id])
 GO
 ALTER TABLE [NN].[Login] CHECK CONSTRAINT [FK_Login_Usuario1]
 GO
-/****** Object:  ForeignKey [FK_RolXUsuario_Rol]    Script Date: 06/15/2015 15:25:46 ******/
+/****** Object:  ForeignKey [FK_RolXUsuario_Rol]    Script Date: 06/16/2015 15:55:04 ******/
 ALTER TABLE [NN].[RolXUsuario]  WITH CHECK ADD  CONSTRAINT [FK_RolXUsuario_Rol] FOREIGN KEY([Rol_Id])
 REFERENCES [NN].[Rol] ([Rol_Id])
 GO
 ALTER TABLE [NN].[RolXUsuario] CHECK CONSTRAINT [FK_RolXUsuario_Rol]
 GO
-/****** Object:  ForeignKey [FK_RolXUsuario_Usuario]    Script Date: 06/15/2015 15:25:46 ******/
+/****** Object:  ForeignKey [FK_RolXUsuario_Usuario]    Script Date: 06/16/2015 15:55:04 ******/
 ALTER TABLE [NN].[RolXUsuario]  WITH CHECK ADD  CONSTRAINT [FK_RolXUsuario_Usuario] FOREIGN KEY([Usu_Id])
 REFERENCES [NN].[Usuario] ([Usu_Id])
 GO
 ALTER TABLE [NN].[RolXUsuario] CHECK CONSTRAINT [FK_RolXUsuario_Usuario]
 GO
-/****** Object:  ForeignKey [FK_Tarjetas_Clientes]    Script Date: 06/15/2015 15:25:46 ******/
+/****** Object:  ForeignKey [FK_Tarjetas_Clientes]    Script Date: 06/16/2015 15:55:04 ******/
 ALTER TABLE [NN].[Tarjetas]  WITH CHECK ADD  CONSTRAINT [FK_Tarjetas_Clientes] FOREIGN KEY([Cli_Id])
 REFERENCES [NN].[Clientes] ([Cli_Id])
 GO
@@ -437,7 +442,7 @@ from gd_esquema.Maestra
 -- CREA TABLA DE CLIENTES
 
 insert into nn.Clientes
-select distinct (select Pais_codigo from nn.Paises where Pais_Desc = Cli_Pais_Desc), Cli_Nombre, Cli_Apellido, (select Tipo_Doc_Cod from nn.Documentos where Tipo_Doc_Desc = Cli_Tipo_Doc_Desc), Cli_Nro_Doc, Cli_Dom_Calle, Cli_Dom_Nro, Cli_Dom_Piso, Cli_Dom_Depto, Cli_Fecha_Nac, Cli_Mail, null, null, null
+select distinct (select Pais_codigo from nn.Paises where Pais_Desc = Cli_Pais_Desc), Cli_Nombre, Cli_Apellido, (select Tipo_Doc_Cod from nn.Documentos where Tipo_Doc_Desc = Cli_Tipo_Doc_Desc), Cli_Nro_Doc, Cli_Dom_Calle, Cli_Dom_Nro, Cli_Dom_Piso, Cli_Dom_Depto, Cli_Fecha_Nac, Cli_Mail, null, null, null, 1
 from gd_esquema.Maestra
 
 -- CREA TABLA DE TIPO DE CUENTAS
@@ -463,8 +468,14 @@ where Cli_Nro_Doc is not null and Deposito_Codigo is not null and Deposito_Fecha
 -- CREA TARJETAS
 
 insert into nn.Tarjetas
-select distinct null, Cli_Nro_Doc, Tarjeta_Numero, Tarjeta_Codigo_Seg, Tarjeta_Emisor_Descripcion, Tarjeta_Fecha_Emision, Tarjeta_Fecha_Vencimiento
+select distinct null, (select Tipo_Doc_Cod from nn.Documentos where Tipo_Doc_Desc = Cli_Tipo_Doc_Desc), Cli_Nro_Doc, Tarjeta_Numero, Tarjeta_Codigo_Seg, Tarjeta_Emisor_Descripcion, Tarjeta_Fecha_Emision, Tarjeta_Fecha_Vencimiento
 from gd_esquema.Maestra
+where Tarjeta_Numero is not null and Tarjeta_Codigo_Seg is not null and Tarjeta_Emisor_Descripcion is not null and Tarjeta_Fecha_Emision is not null and Tarjeta_Fecha_Vencimiento is not  null
+
+update nn.Tarjetas set Cli_Id = (select nn.Clientes.Cli_Id from nn.Clientes where Cli_Tipo_Doc = Cli_Tipo_Doc_Cod and nn.Clientes.Cli_Nro_Doc = nn.Tarjetas.Cli_Nro_Doc)
+
+ALTER TABLE nn.Tarjetas DROP COLUMN Cli_Tipo_Doc
+ALTER TABLE nn.Tarjetas DROP COLUMN Cli_Nro_Doc
 
 -- CREA TABLA DE Transferencias
 
@@ -504,11 +515,36 @@ insert into nn.Funcionalidad values ('ABM Clientes')
 insert into nn.Funcionalidad values ('ABM Cuentas')
 insert into nn.Funcionalidad values ('ABM Usuarios')
 
+-- CREA TABLA FuncionalidadXRol
+
+INSERT INTO nn.FuncionalidadXRol (Func_Id, Rol_Id) VALUES ((select Func_Id from nn.Funcionalidad where Func_Nombre = 'ABM Roles'), (select Rol_Id from nn.Rol where Rol_Nombre = 'Administrador'))
+INSERT INTO nn.FuncionalidadXRol (Func_Id, Rol_Id) VALUES ((select Func_Id from nn.Funcionalidad where Func_Nombre = 'ABM Clientes'), (select Rol_Id from nn.Rol where Rol_Nombre = 'Administrador'))
+INSERT INTO nn.FuncionalidadXRol (Func_Id, Rol_Id) VALUES ((select Func_Id from nn.Funcionalidad where Func_Nombre = 'ABM Cuentas'), (select Rol_Id from nn.Rol where Rol_Nombre = 'Administrador'))
+INSERT INTO nn.FuncionalidadXRol (Func_Id, Rol_Id) VALUES ((select Func_Id from nn.Funcionalidad where Func_Nombre = 'ABM Usuarios'), (select Rol_Id from nn.Rol where Rol_Nombre = 'Administrador'))
+
 -- CREA TABLA USUARIO
 
 INSERT INTO nn.Usuario (Usu_Nombre, Usu_Password, Usu_Activo) VALUES ('admin', '5rhwUL/LgUP8uNsBcKTcntANkE3dPipK0bHo3A/cm+c=', 1)
+
+insert into nn.Usuario (Usu_Nombre, Usu_Password, Usu_Activo)
+select distinct Substring(Cli_Mail, 1, Charindex('@', Cli_Mail) - 1), 'jZae727K08KaOmKSgOaGzww/XVqGr/PKEgIMkjrcbJI=', 1
+from nn.Clientes
+
 update nn.Usuario set usu_intentos = 0
+
+-- ACTUALIZO TABLA CLIENTES
+
+update nn.Clientes set Cli_Usuario = (select Usu_Id from nn.Usuario where Usu_Nombre = Substring(Cli_Mail, 1, Charindex('@', Cli_Mail) - 1)) where Cli_Usuario is null
+
 
 -- CREA TABLA RolXUsuario
 
 INSERT INTO nn.RolXUsuario (Usu_Id, Rol_Id) VALUES ((select Usu_Id from nn.Usuario where Usu_Nombre = 'admin'), (select Rol_Id from nn.Rol where Rol_Nombre = 'Administrador'))
+
+INSERT INTO nn.RolXUsuario (Usu_Id, Rol_Id)
+select Cli_Usuario, (select Rol_Id from nn.Rol where Rol_Nombre = 'Cliente')
+from nn.Clientes
+
+-- ACTUALIZO TABLA Paises
+
+update nn.Paises set pais_desc = REPLACE(pais_desc, CHAR(160), '')

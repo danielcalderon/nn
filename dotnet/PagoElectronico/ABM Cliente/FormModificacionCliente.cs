@@ -9,13 +9,12 @@ namespace PagoElectronico.ABM_Cliente
 {
     public partial class FormModificacionCliente : Form
     {
-        private readonly int _tipoDocumentoCliente;
-        private readonly long _documentoCliente;
+        private readonly int _idCliente;
+        private int _idUsuario;
 
-        public FormModificacionCliente(int tipoDocumentoCliente, long documentoCliente)
+        public FormModificacionCliente(int idCliente)
         {
-            _documentoCliente = documentoCliente;
-            _tipoDocumentoCliente = tipoDocumentoCliente;
+            _idCliente = idCliente;
             InitializeComponent();
         }
 
@@ -35,21 +34,43 @@ namespace PagoElectronico.ABM_Cliente
         private void CargarCliente()
         {
             ClienteDAO clienteDao = new ClienteDAO();
-            Cliente cliente = clienteDao.ObtenerCliente(_tipoDocumentoCliente, _documentoCliente);
+            Cliente cliente = clienteDao.ObtenerCliente(_idCliente);
             textBoxNombre.Text = cliente.Nombre;
             textBoxApellido.Text = cliente.Apellido;
-            comboBoxTipoDoc.SelectedItem = new KeyValuePair<int, string>(cliente.TipoDocumento.Id, cliente.TipoDocumento.Nombre);
+            KeyValuePair<int, string> itemTipoDocumento = new KeyValuePair<int, string>();
+            foreach (KeyValuePair<int, string> item in comboBoxTipoDoc.Items)
+            {
+                if (item.Key == cliente.TipoDocumento.Id)
+                {
+                    itemTipoDocumento = item;
+                }
+            }
+            comboBoxTipoDoc.SelectedItem = itemTipoDocumento;
             textBoxNumeroDoc.Text = cliente.Documento.ToString();
             textBoxEmail.Text = cliente.Email;
-            comboBoxPais.SelectedItem = new KeyValuePair<int, string>(cliente.Pais.Id, cliente.Pais.Nombre);
+            Dictionary<int, string> paisesCombo = new Dictionary<int, string>();
+            paisesCombo.Add(cliente.Pais.Id, cliente.Pais.Nombre);
+            comboBoxPais.DataSource = new BindingSource(paisesCombo, null);
+            comboBoxPais.DisplayMember = "Value";
+            comboBoxPais.ValueMember = "Key";
+            KeyValuePair<int, string> itemPais = new KeyValuePair<int, string>();
+            foreach (KeyValuePair<int, string> item in comboBoxPais.Items)
+            {
+                if (item.Key == cliente.Pais.Id)
+                {
+                    itemPais = item;
+                }
+            }
+            comboBoxPais.SelectedItem = itemPais;
             textBoxCalle.Text = cliente.Calle;
             textBoxPiso.Text = cliente.Piso;
             textBoxDepartamento.Text = cliente.Departamento;
             textBoxLocalidad.Text = cliente.Localidad;
             textBoxNacionalidad.Text = cliente.Nacionalidad;
             dateTimePickerFechaNacimiento.Value = cliente.FechaNacimiento;
+            checkBoxActivo.Checked = cliente.Activo;
 
-            CargarUsuario(cliente.Nombre);
+            CargarUsuario(cliente.Usuario.Id);
         }
 
         private void buttonLimpiar_Click(object sender, EventArgs e)
@@ -122,19 +143,11 @@ namespace PagoElectronico.ABM_Cliente
             }
             ClienteDAO clienteDao = new ClienteDAO();
             KeyValuePair<int, string> itemTipoDocumento = (KeyValuePair<int, string>)comboBoxTipoDoc.SelectedItem;
-            Cliente clienteExistente = clienteDao.ObtenerCliente(itemTipoDocumento.Key, long.Parse(textBoxNumeroDoc.Text.Trim()));
-            if (clienteExistente != null)
-            {
-                MessageBox.Show("El tipo y número de documento ya existen en el sistema", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-            clienteExistente = clienteDao.ObtenerCliente(textBoxEmail.Text.Trim());
-            if (clienteExistente != null)
-            {
-                MessageBox.Show("La dirección de email ya existe en el sistema", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
             Cliente cliente = new Cliente();
+            cliente.Id = _idCliente;
+            Usuario usuario = new Usuario();
+            usuario.Id = _idUsuario;
+            cliente.Usuario = usuario;
             cliente.Nombre = textBoxNombre.Text.Trim();
             cliente.Apellido = textBoxApellido.Text.Trim();
             TipoDocumento tipoDocumento = new TipoDocumento();
@@ -154,9 +167,10 @@ namespace PagoElectronico.ABM_Cliente
             cliente.Localidad = textBoxLocalidad.Text.Trim();
             cliente.Nacionalidad = textBoxNacionalidad.Text.Trim();
             cliente.FechaNacimiento = dateTimePickerFechaNacimiento.Value;
-            //cliente.Usuario = _usuario;
-            clienteDao.GuardarCliente(cliente);
-            MessageBox.Show("El cliente se creó correctamente");
+            cliente.Activo = checkBoxActivo.Checked;
+            clienteDao.ModificarCliente(cliente);
+            MessageBox.Show("El cliente se modificó correctamente");
+            Close();
         }
 
         private void buttonCancelar_Click(object sender, EventArgs e)
@@ -183,12 +197,13 @@ namespace PagoElectronico.ABM_Cliente
             }
         }
 
-        private void CargarUsuario(string nombreUsuario)
+        private void CargarUsuario(int idUsuario)
         {
             UsuarioDAO usuarioDao = new UsuarioDAO();
-            Usuario usuario = usuarioDao.ObtenerUsuario(nombreUsuario);
+            Usuario usuario = usuarioDao.ObtenerUsuario(idUsuario);
             textBoxUsuario.Text = usuario.Nombre;
             checkBoxUsuarioActivo.Checked = usuario.Activo;
+            _idUsuario = idUsuario;
         }
 
         private void textBoxNumeroDoc_KeyPress(object sender, KeyPressEventArgs e)

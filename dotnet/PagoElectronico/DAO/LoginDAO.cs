@@ -16,7 +16,7 @@ namespace PagoElectronico.DAO
                 command.Transaction = transaction;
                 try
                 {
-                    command.CommandText = "INSERT INTO Login (Login_Usuario, Login_Fecha, Login_exitoso, Login_Intentos, Login_UsuarioActivo) VALUES " +
+                    command.CommandText = "INSERT INTO NN.Login (Login_Usuario, Login_Fecha, Login_exitoso, Login_Intentos, Login_UsuarioActivo) VALUES " +
                         "('" + usuario + "', " + DateTimeToSql(DateTime.Now) + ", '" + loginExitoso + "', " + intentos + ", '" + usuarioActivo + "');";
                     command.ExecuteNonQuery();
                     transaction.Commit();

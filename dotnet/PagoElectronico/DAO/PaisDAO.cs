@@ -10,7 +10,7 @@ namespace PagoElectronico.DAO
     {
         public List<Pais> BuscarPaises(string queryNombre)
         {
-            string queryString = "SELECT TOP 10 Pais_Codigo, Pais_Desc FROM Paises where UPPER(Pais_Desc) LIKE '" + queryNombre.ToUpper() + "%' order by Pais_Desc";
+            string queryString = "SELECT TOP 10 Pais_Codigo, Pais_Desc FROM NN.Paises where UPPER(Pais_Desc) LIKE '" + queryNombre.ToUpper() + "%' order by Pais_Desc";
             using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
                 SqlCommand command = new SqlCommand(queryString, connection);

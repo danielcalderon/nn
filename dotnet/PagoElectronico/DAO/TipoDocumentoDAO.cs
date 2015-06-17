@@ -10,7 +10,7 @@ namespace PagoElectronico.DAO
     {
         public List<TipoDocumento> ObtenerDocumentos()
         {
-            const string queryString = "SELECT Tipo_Doc_Cod, Tipo_Doc_Desc from Documentos";
+            const string queryString = "SELECT Tipo_Doc_Cod, Tipo_Doc_Desc from NN.Documentos";
             using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
                 SqlCommand command = new SqlCommand(queryString, connection);

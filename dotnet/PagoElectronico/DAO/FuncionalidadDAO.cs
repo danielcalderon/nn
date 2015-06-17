@@ -9,7 +9,7 @@ namespace PagoElectronico.DAO
     {
         public List<Funcionalidad> ObtenerFuncionalidades()
         {
-            const string queryString = "SELECT Func_Id, Func_Nombre from Funcionalidad";
+            const string queryString = "SELECT Func_Id, Func_Nombre from NN.Funcionalidad";
             using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
                 SqlCommand command = new SqlCommand(queryString, connection);

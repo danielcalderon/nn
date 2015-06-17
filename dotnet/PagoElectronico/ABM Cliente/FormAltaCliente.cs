@@ -51,6 +51,15 @@ namespace PagoElectronico.ABM_Cliente
                 MessageBox.Show("Debe seleccionar un usuario", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+            ClienteDAO clienteDao = new ClienteDAO();
+            Usuario usuarioExistente = new Usuario();
+            usuarioExistente.Nombre = textBoxUsuario.Text;
+            Cliente clienteExistente = clienteDao.ObtenerCliente(usuarioExistente);
+            if (clienteExistente != null)
+            {
+                MessageBox.Show("El usuario selecciondo ya es cliente", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             if (textBoxNombre.Text.Trim().Length == 0)
             {
                 MessageBox.Show("El campo nombre no puede estar vacío", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -96,9 +105,8 @@ namespace PagoElectronico.ABM_Cliente
                 MessageBox.Show("La fecha de nacimiento debe ser menor a hoy", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            ClienteDAO clienteDao = new ClienteDAO();
             KeyValuePair<int, string> itemTipoDocumento = (KeyValuePair<int, string>)comboBoxTipoDoc.SelectedItem;
-            Cliente clienteExistente = clienteDao.ObtenerCliente(itemTipoDocumento.Key, long.Parse(textBoxNumeroDoc.Text.Trim()));
+            clienteExistente = clienteDao.ObtenerCliente(itemTipoDocumento.Key, long.Parse(textBoxNumeroDoc.Text.Trim()));
             if (clienteExistente != null)
             {
                 MessageBox.Show("El tipo y número de documento ya existen en el sistema", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -132,7 +140,14 @@ namespace PagoElectronico.ABM_Cliente
             cliente.FechaNacimiento = dateTimePickerFechaNacimiento.Value;
             cliente.Usuario = _usuario;
             clienteDao.GuardarCliente(cliente);
+            UsuarioDAO usuarioDao = new UsuarioDAO();
+            Usuario usuario = usuarioDao.ObtenerUsuario(textBoxUsuario.Text);
+            RolDAO rolDao = new RolDAO();
+            Rol rolCliente = rolDao.ObtenerRol("Cliente");
+            usuario.Roles.Add(rolCliente);
+            usuarioDao.ModificarUsuario(usuario);
             MessageBox.Show("El cliente se creó correctamente");
+            Close();
         }
 
         private void buttonCancelar_Click(object sender, EventArgs e)
@@ -196,6 +211,7 @@ namespace PagoElectronico.ABM_Cliente
         {
             UsuarioDAO usuarioDao = new UsuarioDAO();
             Usuario usuario = usuarioDao.ObtenerUsuario(nombreUsuario);
+            if (usuario == null) return;
             textBoxUsuario.Text = usuario.Nombre;
             checkBoxUsuarioActivo.Checked = usuario.Activo;
             _usuario = usuario;

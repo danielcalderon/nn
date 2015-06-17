@@ -4,6 +4,7 @@ namespace PagoElectronico.Entidades_de_negocio
 {
     class Cliente
     {
+        public int Id { get; set; }
         public string Nombre { get; set; }
         public string Apellido { get; set; }
         public TipoDocumento TipoDocumento { get; set; }
@@ -17,5 +18,6 @@ namespace PagoElectronico.Entidades_de_negocio
         public string Nacionalidad { get; set; }
         public DateTime FechaNacimiento { get; set; }
         public Usuario Usuario { get; set; }
+        public bool Activo { get; set; }
     }
 }
