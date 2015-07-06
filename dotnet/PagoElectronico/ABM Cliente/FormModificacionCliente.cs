@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
+using PagoElectronico.ABM_Tarjeta;
 using PagoElectronico.DAO;
 using PagoElectronico.Entidades_de_negocio;
 
@@ -29,6 +30,7 @@ namespace PagoElectronico.ABM_Cliente
             comboBoxTipoDoc.SelectedIndex = 0;
 
             CargarCliente();
+            CargarTarjetas();
         }
 
         private void CargarCliente()
@@ -71,6 +73,18 @@ namespace PagoElectronico.ABM_Cliente
             checkBoxActivo.Checked = cliente.Activo;
 
             CargarUsuario(cliente.Usuario.Id);
+        }
+
+        private void CargarTarjetas()
+        {
+            dataGridViewTarjetas.Rows.Clear();
+            TarjetaDAO tarjetaDao = new TarjetaDAO();
+            List<Tarjeta> tarjetas = tarjetaDao.ObtenerTarjetas(_idCliente);
+            foreach (Tarjeta tarjeta in tarjetas)
+            {
+                dataGridViewTarjetas.Rows.Add((new[] { tarjeta.Id.ToString(), tarjeta.Emisor.Id.ToString(), tarjeta.Emisor.Descripcion, tarjeta.Numero.Substring(tarjeta.Numero.Length - 4), 
+                    tarjeta.FechaEmision.ToString("dd/MM/yyyy"), tarjeta.FechaVencimiento.ToString("dd/MM/yyyy"), tarjeta.Activo ? "Sí" : "No" }));
+            }
         }
 
         private void buttonLimpiar_Click(object sender, EventArgs e)
@@ -214,6 +228,21 @@ namespace PagoElectronico.ABM_Cliente
         private void textBoxPiso_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private void buttonNuevaTarjeta_Click(object sender, EventArgs e)
+        {
+            FormAltaTarjeta formAltaTarjeta = new FormAltaTarjeta(_idCliente);
+            formAltaTarjeta.ShowDialog();
+            CargarTarjetas();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow tarjeta = dataGridViewTarjetas.SelectedRows[0];
+            FormModificacionTarjeta formModificacionTarjeta = new FormModificacionTarjeta(int.Parse(tarjeta.Cells["Id"].Value.ToString()));
+            formModificacionTarjeta.ShowDialog();
+            CargarTarjetas();
         }
     }
 }

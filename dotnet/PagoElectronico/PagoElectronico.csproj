@@ -66,6 +66,12 @@
     <Compile Include="ABM Cliente\UserControlClientes.Designer.cs">
       <DependentUpon>UserControlClientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="ABM Cuenta\FormAltaCuenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABM Cuenta\FormAltaCuenta.Designer.cs">
+      <DependentUpon>FormAltaCuenta.cs</DependentUpon>
+    </Compile>
     <Compile Include="ABM Cuenta\UserControlCuentas.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -114,6 +120,18 @@
     <Compile Include="ABM Rol\UserControlListadoRoles.Designer.cs">
       <DependentUpon>UserControlListadoRoles.cs</DependentUpon>
     </Compile>
+    <Compile Include="ABM Tarjetas\FormModificacionTarjeta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABM Tarjetas\FormModificacionTarjeta.Designer.cs">
+      <DependentUpon>FormModificacionTarjeta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ABM Tarjetas\FormAltaTarjeta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABM Tarjetas\FormAltaTarjeta.Designer.cs">
+      <DependentUpon>FormAltaTarjeta.cs</DependentUpon>
+    </Compile>
     <Compile Include="Consulta Saldos\UserControlSaldos.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -121,6 +139,10 @@
       <DependentUpon>UserControlSaldos.cs</DependentUpon>
     </Compile>
     <Compile Include="DAO\ClienteDAO.cs" />
+    <Compile Include="DAO\CuentaDAO.cs" />
+    <Compile Include="DAO\EmisorDAO.cs" />
+    <Compile Include="DAO\TarjetaDAO.cs" />
+    <Compile Include="DAO\TipoCuentaDAO.cs" />
     <Compile Include="DAO\TipoDocumentoDAO.cs" />
     <Compile Include="DAO\FuncionalidadDAO.cs" />
     <Compile Include="DAO\GenericDAO.cs" />
@@ -135,6 +157,10 @@
       <DependentUpon>UserControlDepositos.cs</DependentUpon>
     </Compile>
     <Compile Include="Entidades de negocio\Cliente.cs" />
+    <Compile Include="Entidades de negocio\Cuenta.cs" />
+    <Compile Include="Entidades de negocio\Emisor.cs" />
+    <Compile Include="Entidades de negocio\Tarjeta.cs" />
+    <Compile Include="Entidades de negocio\TipoCuenta.cs" />
     <Compile Include="Entidades de negocio\TipoDocumento.cs" />
     <Compile Include="Entidades de negocio\Funcionalidad.cs" />
     <Compile Include="Entidades de negocio\Pais.cs" />
@@ -196,6 +222,10 @@
       <DependentUpon>UserControlClientes.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="ABM Cuenta\FormAltaCuenta.resx">
+      <DependentUpon>FormAltaCuenta.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="ABM Cuenta\UserControlCuentas.resx">
       <DependentUpon>UserControlCuentas.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -226,6 +256,14 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ABM Rol\UserControlListadoRoles.resx">
       <DependentUpon>UserControlListadoRoles.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABM Tarjetas\FormModificacionTarjeta.resx">
+      <DependentUpon>FormModificacionTarjeta.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABM Tarjetas\FormAltaTarjeta.resx">
+      <DependentUpon>FormAltaTarjeta.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Consulta Saldos\UserControlSaldos.resx">

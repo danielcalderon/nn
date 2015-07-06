@@ -1,7 +1,4 @@
-drop table nn.bancos
-drop table nn.cheques
 drop table nn.depositos
-drop table nn.cuentas
 drop table nn.funcionalidadxrol
 drop table nn.funcionalidad
 drop table nn.login
@@ -9,10 +6,15 @@ drop table nn.retiros
 drop table nn.rolxusuario
 drop table nn.rol
 drop table nn.tarjetas
-drop table nn.tipo_de_cuentas
+drop table nn.emisores
 drop table nn.transferencias
-drop table nn.usuario
+drop table nn.monedas
+drop table nn.cheques
+drop table nn.bancos
+drop table nn.cuentas
+drop table nn.tipo_de_cuentas
 drop table nn.clientes
+drop table nn.usuario
 drop table nn.documentos
 drop table nn.paises
 drop schema nn

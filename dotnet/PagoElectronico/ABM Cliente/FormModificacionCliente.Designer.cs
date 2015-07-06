@@ -29,6 +29,17 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.buttonNuevaTarjeta = new System.Windows.Forms.Button();
+            this.label16 = new System.Windows.Forms.Label();
+            this.dataGridViewTarjetas = new System.Windows.Forms.DataGridView();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdEmisor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Emisor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ultimos4Digitos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaEmision = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaVencimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Asociada = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.checkBoxActivo = new System.Windows.Forms.CheckBox();
             this.comboBoxPais = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -61,13 +72,18 @@
             this.checkBoxUsuarioActivo = new System.Windows.Forms.CheckBox();
             this.label14 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.checkBoxActivo = new System.Windows.Forms.CheckBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTarjetas)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.buttonNuevaTarjeta);
+            this.groupBox1.Controls.Add(this.label16);
+            this.groupBox1.Controls.Add(this.dataGridViewTarjetas);
             this.groupBox1.Controls.Add(this.checkBoxActivo);
             this.groupBox1.Controls.Add(this.comboBoxPais);
             this.groupBox1.Controls.Add(this.label12);
@@ -95,10 +111,107 @@
             this.groupBox1.Controls.Add(this.textBoxNombre);
             this.groupBox1.Location = new System.Drawing.Point(12, 88);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(471, 232);
+            this.groupBox1.Size = new System.Drawing.Size(471, 380);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos del cliente";
+            // 
+            // buttonNuevaTarjeta
+            // 
+            this.buttonNuevaTarjeta.Location = new System.Drawing.Point(362, 187);
+            this.buttonNuevaTarjeta.Name = "buttonNuevaTarjeta";
+            this.buttonNuevaTarjeta.Size = new System.Drawing.Size(90, 23);
+            this.buttonNuevaTarjeta.TabIndex = 30;
+            this.buttonNuevaTarjeta.Text = "Nueva tarjeta";
+            this.buttonNuevaTarjeta.UseVisualStyleBackColor = true;
+            this.buttonNuevaTarjeta.Click += new System.EventHandler(this.buttonNuevaTarjeta_Click);
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(6, 192);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(95, 13);
+            this.label16.TabIndex = 32;
+            this.label16.Text = "Tarjetas de crédito";
+            // 
+            // dataGridViewTarjetas
+            // 
+            this.dataGridViewTarjetas.AllowUserToAddRows = false;
+            this.dataGridViewTarjetas.AllowUserToDeleteRows = false;
+            this.dataGridViewTarjetas.AllowUserToResizeRows = false;
+            this.dataGridViewTarjetas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewTarjetas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewTarjetas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Id,
+            this.IdEmisor,
+            this.Emisor,
+            this.Ultimos4Digitos,
+            this.FechaEmision,
+            this.FechaVencimiento,
+            this.Asociada});
+            this.dataGridViewTarjetas.Location = new System.Drawing.Point(6, 216);
+            this.dataGridViewTarjetas.MultiSelect = false;
+            this.dataGridViewTarjetas.Name = "dataGridViewTarjetas";
+            this.dataGridViewTarjetas.ReadOnly = true;
+            this.dataGridViewTarjetas.RowHeadersVisible = false;
+            this.dataGridViewTarjetas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewTarjetas.Size = new System.Drawing.Size(446, 130);
+            this.dataGridViewTarjetas.TabIndex = 31;
+            // 
+            // Id
+            // 
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Visible = false;
+            // 
+            // IdEmisor
+            // 
+            this.IdEmisor.HeaderText = "IdEmisor";
+            this.IdEmisor.Name = "IdEmisor";
+            this.IdEmisor.ReadOnly = true;
+            this.IdEmisor.Visible = false;
+            // 
+            // Emisor
+            // 
+            this.Emisor.HeaderText = "Emisor";
+            this.Emisor.Name = "Emisor";
+            this.Emisor.ReadOnly = true;
+            // 
+            // Ultimos4Digitos
+            // 
+            this.Ultimos4Digitos.HeaderText = "Últimos 4 digitos";
+            this.Ultimos4Digitos.Name = "Ultimos4Digitos";
+            this.Ultimos4Digitos.ReadOnly = true;
+            // 
+            // FechaEmision
+            // 
+            this.FechaEmision.HeaderText = "Fecha de emisión";
+            this.FechaEmision.Name = "FechaEmision";
+            this.FechaEmision.ReadOnly = true;
+            // 
+            // FechaVencimiento
+            // 
+            this.FechaVencimiento.HeaderText = "Fecha de vencimiento";
+            this.FechaVencimiento.Name = "FechaVencimiento";
+            this.FechaVencimiento.ReadOnly = true;
+            // 
+            // Asociada
+            // 
+            this.Asociada.HeaderText = "Asociada";
+            this.Asociada.Name = "Asociada";
+            this.Asociada.ReadOnly = true;
+            // 
+            // checkBoxActivo
+            // 
+            this.checkBoxActivo.AutoSize = true;
+            this.checkBoxActivo.Location = new System.Drawing.Point(6, 357);
+            this.checkBoxActivo.Name = "checkBoxActivo";
+            this.checkBoxActivo.Size = new System.Drawing.Size(90, 17);
+            this.checkBoxActivo.TabIndex = 28;
+            this.checkBoxActivo.Text = "Cliente activo";
+            this.checkBoxActivo.UseVisualStyleBackColor = true;
             // 
             // comboBoxPais
             // 
@@ -303,7 +416,7 @@
             // 
             // buttonCancelar
             // 
-            this.buttonCancelar.Location = new System.Drawing.Point(327, 348);
+            this.buttonCancelar.Location = new System.Drawing.Point(327, 494);
             this.buttonCancelar.Name = "buttonCancelar";
             this.buttonCancelar.Size = new System.Drawing.Size(75, 23);
             this.buttonCancelar.TabIndex = 8;
@@ -313,7 +426,7 @@
             // 
             // buttonGuardar
             // 
-            this.buttonGuardar.Location = new System.Drawing.Point(408, 348);
+            this.buttonGuardar.Location = new System.Drawing.Point(408, 494);
             this.buttonGuardar.Name = "buttonGuardar";
             this.buttonGuardar.Size = new System.Drawing.Size(75, 23);
             this.buttonGuardar.TabIndex = 7;
@@ -323,7 +436,7 @@
             // 
             // buttonLimpiar
             // 
-            this.buttonLimpiar.Location = new System.Drawing.Point(12, 348);
+            this.buttonLimpiar.Location = new System.Drawing.Point(12, 494);
             this.buttonLimpiar.Name = "buttonLimpiar";
             this.buttonLimpiar.Size = new System.Drawing.Size(75, 23);
             this.buttonLimpiar.TabIndex = 6;
@@ -380,21 +493,21 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos del usuario";
             // 
-            // checkBoxActivo
+            // button1
             // 
-            this.checkBoxActivo.AutoSize = true;
-            this.checkBoxActivo.Location = new System.Drawing.Point(9, 194);
-            this.checkBoxActivo.Name = "checkBoxActivo";
-            this.checkBoxActivo.Size = new System.Drawing.Size(56, 17);
-            this.checkBoxActivo.TabIndex = 28;
-            this.checkBoxActivo.Text = "Activo";
-            this.checkBoxActivo.UseVisualStyleBackColor = true;
+            this.button1.Location = new System.Drawing.Point(266, 187);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(90, 23);
+            this.button1.TabIndex = 33;
+            this.button1.Text = "Modificar tarjeta";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // FormModificacionCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(495, 383);
+            this.ClientSize = new System.Drawing.Size(495, 524);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.buttonCancelar);
             this.Controls.Add(this.buttonGuardar);
@@ -408,6 +521,7 @@
             this.Load += new System.EventHandler(this.FormModificacionCliente_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTarjetas)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
@@ -450,5 +564,16 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.CheckBox checkBoxActivo;
+        private System.Windows.Forms.Button buttonNuevaTarjeta;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.DataGridView dataGridViewTarjetas;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdEmisor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Emisor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Ultimos4Digitos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FechaEmision;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FechaVencimiento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Asociada;
+        private System.Windows.Forms.Button button1;
     }
 }

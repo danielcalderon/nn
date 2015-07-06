@@ -243,5 +243,34 @@ namespace PagoElectronico.DAO
                 }
             }
         }
+
+        public List<Cliente> BuscarClientes(string queryDocumento)
+        {
+            string queryString = "SELECT TOP 10 Cli_Id, Cli_Nro_Doc FROM NN.Clientes where Cli_Nro_Doc LIKE '" + queryDocumento + "%' order by Cli_Nro_Doc";
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            {
+                SqlCommand command = new SqlCommand(queryString, connection);
+                try
+                {
+                    List<Cliente> clientes = new List<Cliente>();
+                    connection.Open();
+                    SqlDataReader reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        Cliente cliente = new Cliente();
+                        cliente.Id = int.Parse(reader[0].ToString());
+                        cliente.Documento = int.Parse(reader[1].ToString());
+                        clientes.Add(cliente);
+                    }
+                    reader.Close();
+                    return clientes;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                    return null;
+                }
+            }
+        }
     }
 }
